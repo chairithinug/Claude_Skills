@@ -35,6 +35,76 @@ Claude_Skills/
 | [`token-optimizing/`](token-optimizing/) | `/token-optimizing` | Compresses prompts, RAG context, few-shot blocks, and agent loops without losing load-bearing content. Triages cache → batch → route → bound → compress → rewrite before touching the prompt. Ships with worked example, trigger eval (20 cases), and quality eval (8 cases). |
 | [`working-through/`](working-through/) | `/working-through` | Coaches the user to the answer instead of giving it — provides the framework, asks them to apply it, reacts to their attempt. |
 
+## SWOT — per skill
+
+A short read on what each skill is good at, where it falls down, where it could grow, and what could break it. Strictly about the skill's mechanics — not about who's using it.
+
+### `ai-fluency-planning`
+- **Strength** — produces a reusable artifact (the brief) that gets referenced throughout the project, not a one-shot plan; applies a published framework rather than ad-hoc structure.
+- **Weakness** — the full interview can feel heavy on simple projects; relies on the user articulating Discernment criteria, which many people find hard upfront.
+- **Opportunity** — could ship template variants for common project types (memo, code project, research synthesis); could integrate with `/deciding` for project-go/no-go gating.
+- **Threat** — risk of becoming a procrastination tool — endless planning without execution. Output should commit the user to a concrete start.
+
+### `deciding`
+- **Strength** — six-step structure surfaces reversibility and the key unknown explicitly, not just options/criteria; only recommends when criteria clearly favor one option.
+- **Weakness** — output quality depends entirely on whether the user articulates their criteria honestly; structured output can mask shaky inputs.
+- **Opportunity** — pairs naturally with `/devil-advocating` for stress-testing the recommended option; could add domain references (hire/fire, vendor selection, acquisition).
+- **Threat** — pseudo-rigor risk — the framework can make a flimsy decision look thorough without surfacing the actual hard trade-off.
+
+### `devil-advocating`
+- **Strength** — forces a steel-manned argument against the user's position; no balance, no recovery path, no hedging — the brief is the point.
+- **Weakness** — output is intentionally one-sided; misuse as the only input would be epistemically distorting.
+- **Opportunity** — best chained after `/deciding` for full stress-test cycle; could add a counter-stance parameter for unusual oppositions.
+- **Threat** — emotionally taxing on value-laden personal decisions; user must be in stress-test mode, not validation mode.
+
+### `executive-lensing`
+- **Strength** — surfaces concerns from up to six functional perspectives, skipping irrelevant ones; passive trigger logic catches strategic decisions where the skill wasn't invoked explicitly.
+- **Weakness** — lens depth depends on assumptions about each role; can collapse into vague abstractions if the user's input is thin.
+- **Opportunity** — could extend with industry-specific lenses (regulatory, security, founder-investor); could pair with `/deciding` for a full strategic pass.
+- **Threat** — risk of generic role-play if context lacks specifics — the lenses sound impressive while saying nothing testable.
+
+### `explaining`
+- **Strength** — pattern-recognition cue at the end makes each explanation transferable to the next similar problem, not one-off.
+- **Weakness** — quality of the cue depends on Claude's domain depth; thin domains produce thin cues.
+- **Opportunity** — could include a reference file of common patterns (logical fallacies, distributed-systems trade-offs, statistical traps) to scaffold richer cues.
+- **Threat** — conflicts with `/working-through`; if both are invoked, the user is asked to pick — that friction may annoy.
+
+### `fortune-telling`
+- **Strength** — multi-tradition coverage with explicit "skip what can't be verified" honesty; for-entertainment framing is built in once-per-session, not repeated.
+- **Weakness** — technical accuracy on Rokuyō and BaZi day-stems requires ephemeris/calendar lookups Claude lacks; readings rely on traditions that don't need precise computation.
+- **Opportunity** — could integrate calendar/ephemeris APIs for accurate lunar and astronomical data; could add per-tradition reference files for depth.
+- **Threat** — readers may act on predictions for high-stakes decisions despite the disclaimer; medical/legal/financial guardrails must stay firm.
+
+### `negotiating`
+- **Strength** — explicit positive and negative trigger cases (this is the strongest description in the repo for accurate firing); ethics check is built into the workflow rather than tacked on.
+- **Weakness** — body is the longest of the reasoning skills; full 8-step prep is overkill for tactical mid-negotiation moments.
+- **Opportunity** — could split into prep-mode and tactical-mode reference files; could add domain references (salary, vendor, fundraise) with specific anchoring guidance.
+- **Threat** — analysis paralysis when timing is the actual bottleneck; skill should detect "this is moving fast" and switch to tactical mode automatically.
+
+### `quick-answering`
+- **Strength** — uncompromising brevity rule — no scaffolding, no caveats unless load-bearing; forces past default verbosity.
+- **Weakness** — loses to mode conflicts when other skills want to add structure; can hide nuance on genuinely complex questions.
+- **Opportunity** — strong companion to verbose skills — chained as a "now compress that" follow-up after a long output.
+- **Threat** — misapplication on ambiguous questions risks confidently-wrong short answers; skill must flag ambiguity rather than guess.
+
+### `thai-dish-picking`
+- **Strength** — bilingual search guidance (Thai + English) and explicit autopilot-avoidance rules; three worked examples baked in for diversity, full agency, and constrained modes.
+- **Weakness** — Bangkok-availability weighting may be off for users elsewhere in Thailand or for diaspora contexts.
+- **Opportunity** — could add dietary-restriction reference files (vegetarian, halal, gluten-free); could integrate with location-aware data for real-time availability.
+- **Threat** — quality depends on freshness of Thai-language search results; without web search, the skill falls back to memory which over-represents the famous twenty.
+
+### `token-optimizing`
+- **Strength** — triages cache → batch → route → bound → compress → rewrite before touching the prompt; ships with both trigger eval (20 cases) and quality eval (8 cases) plus a worked example.
+- **Weakness** — tokenizer estimates are approximations; non-English content needs the real tokenizer to count accurately.
+- **Opportunity** — could ship reference scripts for token counting across providers; could add a per-provider pricing reference that updates as provider docs change.
+- **Threat** — aggressive compression on safety-relevant content risks cutting material the original safety review depended on; skill must refuse cuts in those zones.
+
+### `working-through`
+- **Strength** — coaches the user to derive the answer rather than handing it over; matches learning-by-doing pedagogy.
+- **Weakness** — requires user willingness to engage; not appropriate for time-pressed work or when the user simply needs the answer.
+- **Opportunity** — could integrate domain-specific reasoning frameworks (debugging, math, design critique) as reference files, each scaffolding a different reasoning shape.
+- **Threat** — can feel patronizing if the user wanted `/explaining` instead; skill should detect frustration signals and offer to switch.
+
 ## Authoring a new skill
 
 The full process is in [STANDARDS.md](./STANDARDS.md). The short version:
