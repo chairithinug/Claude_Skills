@@ -1,0 +1,59 @@
+# macOS
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+.AppleDouble
+.LSOverride
+
+# Local junk drawer (created when bash sandbox can't unlink stale files —
+# delete from Finder when convenient)
+_trash/
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.history/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+.python-version
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Logs and temp
+*.log
+tmp/
+temp/
+
+# Secrets — non-negotiable per CLAUDE.md and STANDARDS.md §12
+.env
+.env.*
+*.env
+secrets.*
+*.key
+*.pem
+config.local.*
+
+# Build/test artifacts (NOT .skill files — those ARE the distributable build
+# artifacts and should be committed)
+dist/
+build/
+coverage/
+.pytest_cache/
+.mypy_cache/
+
+# OS-specific
+Thumbs.db
+Desktop.ini

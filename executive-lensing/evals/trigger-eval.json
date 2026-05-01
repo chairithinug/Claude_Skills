@@ -1,0 +1,25 @@
+{
+  "_comment": "Trigger eval for executive-lensing skill. 10 positive + 10 negative = 20 cases. Used with skill-creator's run_loop.py to optimize the description for triggering accuracy after the /csuite → /executive-lensing rename. Mix exercises explicit invocation, multi-functional decisions described casually, and near-miss negatives that share C-suite keywords without warranting multi-lens analysis.",
+  "evals": [
+    {"query": "/executive-lensing", "should_trigger": true, "category": "explicit_slash_command"},
+    {"query": "We're thinking about acquiring SmallCo for $40M next quarter. Our cash position is healthy but I'm worried about integration. Can you stress-test this from multiple angles before we pull the trigger?", "should_trigger": true, "category": "acquisition_decision_explicit_request"},
+    {"query": "thinking of pivoting our SaaS company from SMB to enterprise. what could go wrong", "should_trigger": true, "category": "pivot_casual_phrasing"},
+    {"query": "our CTO wants to rewrite the auth system in Rust. CEO says do it. CFO hasn't weighed in. Should we?", "should_trigger": true, "category": "cross_functional_disagreement"},
+    {"query": "Considering raising a $20M Series B at a flat valuation to extend runway 18 months. Is this the right call?", "should_trigger": true, "category": "fundraise_strategic"},
+    {"query": "we're 6 people considering opening a London office. revenue is $3M ARR mostly US. main risks?", "should_trigger": true, "category": "expansion_decision"},
+    {"query": "should we open-source our core product? our investors are pushing back hard", "should_trigger": true, "category": "strategic_choice_with_stakeholders"},
+    {"query": "looking at outsourcing customer support to a vendor in the Philippines. need to think through this carefully — there are people, brand, and cost angles", "should_trigger": true, "category": "multi_dimensional_outsourcing"},
+    {"query": "i'm a founder considering replacing my COO who's been with me for 3 years. it's messy and i need to think through it from every angle", "should_trigger": true, "category": "leadership_transition_explicit_multi_angle"},
+    {"query": "we're deciding whether to launch our v2 in January or hold for Q2 — engineering says they need more time, sales says we'll lose deals if we wait", "should_trigger": true, "category": "launch_timing_function_conflict"},
+    {"query": "what does CFO stand for?", "should_trigger": false, "category": "definition_request_lookalike"},
+    {"query": "explain the difference between EBITDA and net income", "should_trigger": false, "category": "finance_knowledge_question"},
+    {"query": "what frameworks do C-suite executives use for prioritization?", "should_trigger": false, "category": "theory_question_keyword_overlap"},
+    {"query": "summarize the latest earnings report from Microsoft", "should_trigger": false, "category": "data_fetch_no_decision"},
+    {"query": "write me a job description for a CFO", "should_trigger": false, "category": "writing_task_keyword_overlap"},
+    {"query": "what's the typical org chart for a startup at Series A?", "should_trigger": false, "category": "factual_lookup"},
+    {"query": "i just wrote a memo to my exec team about Q4 priorities, can you review it for clarity and tone?", "should_trigger": false, "category": "writing_review_not_strategic_analysis"},
+    {"query": "i'm preparing for an interview for a CMO role at a fintech, what should i expect?", "should_trigger": false, "category": "career_prep_keyword_overlap"},
+    {"query": "fix this typescript bug in my checkout flow: const total = items.reduce((a,b) => a + b.price)", "should_trigger": false, "category": "engineering_task"},
+    {"query": "help me debug why my Looker dashboard isn't showing real-time revenue data", "should_trigger": false, "category": "technical_dashboard_not_strategy"}
+  ]
+}
