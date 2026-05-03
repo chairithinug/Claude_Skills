@@ -1,0 +1,1706 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {
+    "hyperedges": [
+      {
+        "id": "skill_authoring_workflow",
+        "label": "Skill Authoring Workflow",
+        "nodes": [
+          "eval_first_principle",
+          "template_evals_md",
+          "template_skill_md",
+          "canonical_section_structure",
+          "standards_authoring_standard"
+        ],
+        "relation": "participate_in",
+        "confidence": "EXTRACTED",
+        "confidence_score": 0.95
+      },
+      {
+        "id": "skill_discovery_and_loading",
+        "label": "Skill Discovery and Loading Mechanism",
+        "nodes": [
+          "frontmatter_discovery",
+          "progressive_disclosure_pattern",
+          "skill_naming_convention",
+          "reference_depth_rule"
+        ],
+        "relation": "participate_in",
+        "confidence": "INFERRED",
+        "confidence_score": 0.85
+      },
+      {
+        "id": "skill_safety_and_governance",
+        "label": "Skill Safety and Governance",
+        "nodes": [
+          "no_secrets_rule",
+          "html_demo_safety_contract",
+          "anthropic_docs_precedence",
+          "load_bearing_content_preservation"
+        ],
+        "relation": "participate_in",
+        "confidence": "INFERRED",
+        "confidence_score": 0.85
+      },
+      {
+        "id": "reasoning_skill_family",
+        "label": "Reasoning Skill Family (Decision & Analysis)",
+        "nodes": [
+          "deciding_skill",
+          "executive_lensing_skill",
+          "negotiating_skill",
+          "skill_chaining_pattern"
+        ],
+        "relation": "participate_in",
+        "confidence": "INFERRED",
+        "confidence_score": 0.8
+      },
+      {
+        "id": "executive_suite_analysis",
+        "label": "Executive Suite Multi-Lens Analysis",
+        "nodes": [
+          "executive_lensing_ceo_lens",
+          "executive_lensing_cfo_lens",
+          "executive_lensing_coo_lens",
+          "executive_lensing_cmo_lens",
+          "executive_lensing_cto_lens",
+          "executive_lensing_chro_lens"
+        ],
+        "relation": "participate_in",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0
+      },
+      {
+        "id": "divination_tradition_system",
+        "label": "Multi-Tradition Divination System",
+        "nodes": [
+          "fortune_telling_rokuyo",
+          "fortune_telling_chinese",
+          "fortune_telling_western",
+          "fortune_telling_thai",
+          "fortune_telling_vedic"
+        ],
+        "relation": "participate_in",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0
+      },
+      {
+        "id": "interview_process_workflow",
+        "label": "Interview Process Workflow",
+        "nodes": [
+          "interviewing_interviewee_prep",
+          "interviewing_interviewer_design",
+          "interviewing_interview_debrief"
+        ],
+        "relation": "participate_in",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0
+      },
+      {
+        "id": "user_support_spectrum",
+        "label": "User Support Spectrum Skills",
+        "nodes": [
+          "talking_it_out_skill",
+          "working_through_skill",
+          "devil_advocating_skill",
+          "researching_topics_skill"
+        ],
+        "relation": "participate_in",
+        "confidence": "INFERRED",
+        "confidence_score": 0.75
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "label": "Claude_Skills Repository",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_project",
+      "community": 2,
+      "norm_label": "claude_skills repository"
+    },
+    {
+      "label": "Skill Authoring Standards",
+      "file_type": "document",
+      "source_file": "STANDARDS.md",
+      "source_location": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "standards_authoring_standard",
+      "community": 0,
+      "norm_label": "skill authoring standards"
+    },
+    {
+      "label": "Project Instructions",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claude_project_instructions",
+      "community": 0,
+      "norm_label": "project instructions"
+    },
+    {
+      "label": "Skill Template",
+      "file_type": "document",
+      "source_file": "_template/SKILL.md",
+      "source_location": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "template_skill_md",
+      "community": 0,
+      "norm_label": "skill template"
+    },
+    {
+      "label": "Evaluation Template",
+      "file_type": "document",
+      "source_file": "_template/evals.md",
+      "source_location": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "template_evals_md",
+      "community": 0,
+      "norm_label": "evaluation template"
+    },
+    {
+      "label": "Loop Results Template",
+      "file_type": "document",
+      "source_file": "_template/loop-results.md",
+      "source_location": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "template_loop_results",
+      "community": 7,
+      "norm_label": "loop results template"
+    },
+    {
+      "label": "Deciding Skill",
+      "file_type": "document",
+      "source_file": "deciding/SKILL.md",
+      "source_location": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "deciding_skill",
+      "community": 2,
+      "norm_label": "deciding skill"
+    },
+    {
+      "label": "Decision Framework Reference",
+      "file_type": "document",
+      "source_file": "deciding/references/framework.md",
+      "source_location": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "deciding_framework_ref",
+      "community": 2,
+      "norm_label": "decision framework reference"
+    },
+    {
+      "label": "Explaining Skill",
+      "file_type": "document",
+      "source_file": "explaining/SKILL.md",
+      "source_location": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "explaining_skill",
+      "community": 2,
+      "norm_label": "explaining skill"
+    },
+    {
+      "label": "Negotiating Skill",
+      "file_type": "document",
+      "source_file": "negotiating/SKILL.md",
+      "source_location": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "negotiating_skill",
+      "community": 2,
+      "norm_label": "negotiating skill"
+    },
+    {
+      "label": "AI Fluency Planning Skill",
+      "file_type": "document",
+      "source_file": "ai-fluency-planning/SKILL.md",
+      "source_location": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "ai_fluency_planning_skill",
+      "community": 2,
+      "norm_label": "ai fluency planning skill"
+    },
+    {
+      "label": "Thai Dish Picking Skill",
+      "file_type": "document",
+      "source_file": "thai-dish-picking/SKILL.md",
+      "source_location": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "thai_dish_picking_skill",
+      "community": 2,
+      "norm_label": "thai dish picking skill"
+    },
+    {
+      "label": "Quick Answering Skill",
+      "file_type": "document",
+      "source_file": "quick-answering/SKILL.md",
+      "source_location": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "quick_answering_skill",
+      "community": 2,
+      "norm_label": "quick answering skill"
+    },
+    {
+      "label": "Token Optimizing Skill",
+      "file_type": "document",
+      "source_file": "token-optimizing/SKILL.md",
+      "source_location": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "token_optimizing_skill",
+      "community": 6,
+      "norm_label": "token optimizing skill"
+    },
+    {
+      "label": "Token Optimizing Worked Example",
+      "file_type": "document",
+      "source_file": "token-optimizing/references/worked-example-customer-support.md",
+      "source_location": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "token_optimizing_worked_example",
+      "community": 6,
+      "norm_label": "token optimizing worked example"
+    },
+    {
+      "label": "Token Optimizing Quality Eval",
+      "file_type": "document",
+      "source_file": "token-optimizing/evals/quality-eval.md",
+      "source_location": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "token_optimizing_quality_eval",
+      "community": 6,
+      "norm_label": "token optimizing quality eval"
+    },
+    {
+      "label": "Executive Lensing Skill",
+      "file_type": "document",
+      "source_file": "executive-lensing/evals/loops/2026-05-03/baseline-description.txt",
+      "source_location": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "source_url": null,
+      "id": "executive_lensing_skill",
+      "community": 5,
+      "norm_label": "executive lensing skill"
+    },
+    {
+      "label": "Eval-First Principle",
+      "file_type": "rationale",
+      "source_file": "STANDARDS.md",
+      "source_location": "\u00a710",
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "eval_first_principle",
+      "community": 0,
+      "norm_label": "eval-first principle"
+    },
+    {
+      "label": "Progressive Disclosure Pattern",
+      "file_type": "rationale",
+      "source_file": "STANDARDS.md",
+      "source_location": "\u00a71, \u00a77",
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "progressive_disclosure_pattern",
+      "community": 0,
+      "norm_label": "progressive disclosure pattern"
+    },
+    {
+      "label": "Frontmatter as Discovery Surface",
+      "file_type": "rationale",
+      "source_file": "STANDARDS.md",
+      "source_location": "\u00a73, \u00a75",
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "frontmatter_discovery",
+      "community": 0,
+      "norm_label": "frontmatter as discovery surface"
+    },
+    {
+      "label": "Skill Naming Convention",
+      "file_type": "rationale",
+      "source_file": "STANDARDS.md, CLAUDE.md",
+      "source_location": "\u00a74",
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "skill_naming_convention",
+      "community": 0,
+      "norm_label": "skill naming convention"
+    },
+    {
+      "label": "No Secrets Rule",
+      "file_type": "rationale",
+      "source_file": "CLAUDE.md, STANDARDS.md",
+      "source_location": "\u00a712",
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "no_secrets_rule",
+      "community": 0,
+      "norm_label": "no secrets rule"
+    },
+    {
+      "label": "SKILL.md Body Line Limit (500 lines)",
+      "file_type": "rationale",
+      "source_file": "STANDARDS.md, CLAUDE.md",
+      "source_location": "\u00a76",
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "body_line_limit",
+      "community": 0,
+      "norm_label": "skill.md body line limit (500 lines)"
+    },
+    {
+      "label": "Reference Files One Level Deep",
+      "file_type": "rationale",
+      "source_file": "STANDARDS.md",
+      "source_location": "\u00a72, \u00a77",
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "reference_depth_rule",
+      "community": 0,
+      "norm_label": "reference files one level deep"
+    },
+    {
+      "label": "HTML Demo Public-GitHub Safety Contract",
+      "file_type": "rationale",
+      "source_file": "STANDARDS.md",
+      "source_location": "\u00a712",
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "html_demo_safety_contract",
+      "community": 0,
+      "norm_label": "html demo public-github safety contract"
+    },
+    {
+      "label": "Skill Conflict Resolution Pattern",
+      "file_type": "rationale",
+      "source_file": "STANDARDS.md, skill files",
+      "source_location": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "skill_conflict_resolution",
+      "community": 2,
+      "norm_label": "skill conflict resolution pattern"
+    },
+    {
+      "label": "Skill Chaining Pattern",
+      "file_type": "rationale",
+      "source_file": "skill files (deciding, executive-lensing, negotiating, etc.)",
+      "source_location": "Edge cases sections",
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "skill_chaining_pattern",
+      "community": 2,
+      "norm_label": "skill chaining pattern"
+    },
+    {
+      "label": "Load-Bearing Content Preservation Principle",
+      "file_type": "rationale",
+      "source_file": "token-optimizing/SKILL.md",
+      "source_location": "Core principle",
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "load_bearing_content_preservation",
+      "community": 6,
+      "norm_label": "load-bearing content preservation principle"
+    },
+    {
+      "label": "Trigger Eval JSON Format",
+      "file_type": "rationale",
+      "source_file": "STANDARDS.md",
+      "source_location": "\u00a710",
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "trigger_eval_format",
+      "community": 8,
+      "norm_label": "trigger eval json format"
+    },
+    {
+      "label": "Anthropic Docs Precedence Rule",
+      "file_type": "rationale",
+      "source_file": "STANDARDS.md, CLAUDE.md",
+      "source_location": "\u00a75, Final section",
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "anthropic_docs_precedence",
+      "community": 0,
+      "norm_label": "anthropic docs precedence rule"
+    },
+    {
+      "label": "Output Format Conventions",
+      "file_type": "rationale",
+      "source_file": "STANDARDS.md",
+      "source_location": "\u00a76, \u00a78, \u00a79",
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "output_format_conventions",
+      "community": 9,
+      "norm_label": "output format conventions"
+    },
+    {
+      "label": "Canonical Four-Section Structure",
+      "file_type": "rationale",
+      "source_file": "STANDARDS.md",
+      "source_location": "\u00a76",
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "canonical_section_structure",
+      "community": 0,
+      "norm_label": "canonical four-section structure"
+    },
+    {
+      "label": "Long-Skill Variant (Step N headings)",
+      "file_type": "rationale",
+      "source_file": "STANDARDS.md",
+      "source_location": "\u00a76",
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "long_skill_variant",
+      "community": 0,
+      "norm_label": "long-skill variant (step n headings)"
+    },
+    {
+      "label": "Subjective Skills Quality Eval Exemption",
+      "file_type": "rationale",
+      "source_file": "STANDARDS.md",
+      "source_location": "\u00a710",
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "subjective_skills_exemption",
+      "community": 0,
+      "norm_label": "subjective skills quality eval exemption"
+    },
+    {
+      "label": "CEO Lens \u2014 Strategy & Optionality",
+      "file_type": "rationale",
+      "source_file": "executive-lensing/references/lenses.md",
+      "source_location": "lines 8-15",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Examines long-term direction, mission alignment, future optionality, and opportunity cost of decisions",
+      "id": "executive_lensing_ceo_lens",
+      "community": 5,
+      "norm_label": "ceo lens \u2014 strategy & optionality"
+    },
+    {
+      "label": "CFO Lens \u2014 Capital & Financial Risk",
+      "file_type": "rationale",
+      "source_file": "executive-lensing/references/lenses.md",
+      "source_location": "lines 18-25",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Examines costs, returns, unit economics, cash flow impact, and financial sustainability",
+      "id": "executive_lensing_cfo_lens",
+      "community": 5,
+      "norm_label": "cfo lens \u2014 capital & financial risk"
+    },
+    {
+      "label": "COO Lens \u2014 Execution & Operations",
+      "file_type": "rationale",
+      "source_file": "executive-lensing/references/lenses.md",
+      "source_location": "lines 29-36",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Examines feasibility, operational dependencies, scalability, and process repeatability",
+      "id": "executive_lensing_coo_lens",
+      "community": 5,
+      "norm_label": "coo lens \u2014 execution & operations"
+    },
+    {
+      "label": "CMO Lens \u2014 Market & Brand",
+      "file_type": "rationale",
+      "source_file": "executive-lensing/references/lenses.md",
+      "source_location": "lines 39-46",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Examines customer positioning, competitive context, distribution channels, and reputational risk",
+      "id": "executive_lensing_cmo_lens",
+      "community": 5,
+      "norm_label": "cmo lens \u2014 market & brand"
+    },
+    {
+      "label": "CTO Lens \u2014 Technology & Architecture",
+      "file_type": "rationale",
+      "source_file": "executive-lensing/references/lenses.md",
+      "source_location": "lines 49-57",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Examines technical feasibility, architectural trade-offs, build vs buy, technical debt, and security/privacy implications",
+      "id": "executive_lensing_cto_lens",
+      "community": 5,
+      "norm_label": "cto lens \u2014 technology & architecture"
+    },
+    {
+      "label": "CHRO Lens \u2014 People & Culture",
+      "file_type": "rationale",
+      "source_file": "executive-lensing/references/lenses.md",
+      "source_location": "lines 60-67",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Examines skill gaps, talent risks, culture/morale impact, and organizational design requirements",
+      "id": "executive_lensing_chro_lens",
+      "community": 5,
+      "norm_label": "chro lens \u2014 people & culture"
+    },
+    {
+      "label": "Devil Advocating Skill",
+      "file_type": "document",
+      "source_file": "devil-advocating/SKILL.md",
+      "source_location": "lines 1-8",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "devil_advocating_skill",
+      "community": 1,
+      "norm_label": "devil advocating skill"
+    },
+    {
+      "label": "Red-Team Steelman Opposition Argument",
+      "file_type": "rationale",
+      "source_file": "devil-advocating/SKILL.md",
+      "source_location": "lines 10-32",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Builds the strongest possible case against a user position without balance or recovery path, finding most damaging and plausible objections",
+      "id": "devil_advocating_opposition_argument",
+      "community": 1,
+      "norm_label": "red-team steelman opposition argument"
+    },
+    {
+      "label": "Researching Topics Skill",
+      "file_type": "document",
+      "source_file": "researching-topics/SKILL.md",
+      "source_location": "lines 1-18",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "researching_topics_skill",
+      "community": 1,
+      "norm_label": "researching topics skill"
+    },
+    {
+      "label": "Forced Methodology for Topic Research",
+      "file_type": "rationale",
+      "source_file": "researching-topics/SKILL.md",
+      "source_location": "lines 20-24",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Enforces explicit framing, multi-angle source planning, fact-vs-inference labeling, and consistent layered output for substantive research",
+      "id": "researching_topics_forced_methodology",
+      "community": 1,
+      "norm_label": "forced methodology for topic research"
+    },
+    {
+      "label": "Quick-Scan Mode",
+      "file_type": "rationale",
+      "source_file": "researching-topics/SKILL.md",
+      "source_location": "lines 37-42",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Single search round with light source planning, 5-10 minute depth, 300-500 words output",
+      "id": "researching_topics_quick_scan",
+      "community": 1,
+      "norm_label": "quick-scan mode"
+    },
+    {
+      "label": "Deep-Dive Mode",
+      "file_type": "rationale",
+      "source_file": "researching-topics/SKILL.md",
+      "source_location": "lines 41-42",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Multi-step methodology with multiple search rounds and web_fetch on load-bearing sources, 1000+ word output",
+      "id": "researching_topics_deep_dive",
+      "community": 1,
+      "norm_label": "deep-dive mode"
+    },
+    {
+      "label": "Compare-Options Mode",
+      "file_type": "rationale",
+      "source_file": "researching-topics/SKILL.md",
+      "source_location": "lines 43-44",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Consistent criteria applied across named alternatives for comparative analysis",
+      "id": "researching_topics_compare_options",
+      "community": 1,
+      "norm_label": "compare-options mode"
+    },
+    {
+      "label": "Working Through Skill",
+      "file_type": "document",
+      "source_file": "working-through/SKILL.md",
+      "source_location": "lines 1-9",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "working_through_skill",
+      "community": 1,
+      "norm_label": "working through skill"
+    },
+    {
+      "label": "Learning by Doing Framework",
+      "file_type": "rationale",
+      "source_file": "working-through/SKILL.md",
+      "source_location": "lines 11-17",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Guides user through reasoning by providing framework, asking application, and reacting to attempt rather than giving answer directly",
+      "id": "working_through_learning_by_doing",
+      "community": 1,
+      "norm_label": "learning by doing framework"
+    },
+    {
+      "label": "Talking It Out Skill",
+      "file_type": "document",
+      "source_file": "talking-it-out/SKILL.md",
+      "source_location": "lines 1-15",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "talking_it_out_skill",
+      "community": 1,
+      "norm_label": "talking it out skill"
+    },
+    {
+      "label": "Companion for Hard Times",
+      "file_type": "rationale",
+      "source_file": "talking-it-out/SKILL.md",
+      "source_location": "lines 17-37",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Provides warm non-clinical companionship using presence, not response; compassion not emotional mirroring; user-led pacing",
+      "id": "talking_it_out_companion",
+      "community": 1,
+      "norm_label": "companion for hard times"
+    },
+    {
+      "label": "Vent Mode",
+      "file_type": "rationale",
+      "source_file": "talking-it-out/SKILL.md",
+      "source_location": "lines 44-49",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "User needs space to say it out loud, wants acknowledgment not analysis",
+      "id": "talking_it_out_vent_mode",
+      "community": 1,
+      "norm_label": "vent mode"
+    },
+    {
+      "label": "Process Mode",
+      "file_type": "rationale",
+      "source_file": "talking-it-out/SKILL.md",
+      "source_location": "lines 49-50",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "User wants help making sense of feelings, open to gentle questions",
+      "id": "talking_it_out_process_mode",
+      "community": 1,
+      "norm_label": "process mode"
+    },
+    {
+      "label": "Decide Mode",
+      "file_type": "rationale",
+      "source_file": "talking-it-out/SKILL.md",
+      "source_location": "lines 50-51",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "User wants to figure out a next step, open to light reframes or framework prompts",
+      "id": "talking_it_out_decide_mode",
+      "community": 1,
+      "norm_label": "decide mode"
+    },
+    {
+      "label": "Fortune Telling Skill",
+      "file_type": "document",
+      "source_file": "fortune-telling/SKILL.md",
+      "source_location": "lines 1-15",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "fortune_telling_skill",
+      "community": 3,
+      "norm_label": "fortune telling skill"
+    },
+    {
+      "label": "Multi-Tradition Divination",
+      "file_type": "rationale",
+      "source_file": "fortune-telling/SKILL.md",
+      "source_location": "lines 17-19",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Quick fun predictions using multiple astrological traditions, selecting primary tradition plus optional cross-check per question type",
+      "id": "fortune_telling_multi_tradition",
+      "community": 3,
+      "norm_label": "multi-tradition divination"
+    },
+    {
+      "label": "Specific Question Mode",
+      "file_type": "rationale",
+      "source_file": "fortune-telling/SKILL.md",
+      "source_location": "lines 36-40",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Provides verdict plus brief reasoning from primary tradition for oracle-style decisions",
+      "id": "fortune_telling_specific_question",
+      "community": 3,
+      "norm_label": "specific question mode"
+    },
+    {
+      "label": "Daily Luck Overview Mode",
+      "file_type": "rationale",
+      "source_file": "fortune-telling/SKILL.md",
+      "source_location": "lines 39-40",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Structured day reading with signature, activities, lucky symbols, and best window",
+      "id": "fortune_telling_daily_luck",
+      "community": 3,
+      "norm_label": "daily luck overview mode"
+    },
+    {
+      "label": "Auspicious Timing Mode",
+      "file_type": "rationale",
+      "source_file": "fortune-telling/SKILL.md",
+      "source_location": "lines 40-40",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Picks auspicious day/window from next 1-4 weeks using tradition logic",
+      "id": "fortune_telling_auspicious_timing",
+      "community": 3,
+      "norm_label": "auspicious timing mode"
+    },
+    {
+      "label": "Japanese Rokuyo",
+      "file_type": "rationale",
+      "source_file": "fortune-telling/references/japanese-rokuyo.md",
+      "source_location": "lines 1-25",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "6-day lunar cycle providing timing-within-day refinement through values like Taian (most auspicious), Butsumetsu (most inauspicious), and morning/afternoon splits",
+      "id": "fortune_telling_rokuyo",
+      "community": 3,
+      "norm_label": "japanese rokuyo"
+    },
+    {
+      "label": "Chinese BaZi and Zodiac",
+      "file_type": "rationale",
+      "source_file": "fortune-telling/references/chinese.md",
+      "source_location": "lines 1-37",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Year-animal interactions (harmony triangles and clashes) and day pillar stem-branch analysis for predicting collaborative or conflicting energies",
+      "id": "fortune_telling_chinese",
+      "community": 3,
+      "norm_label": "chinese bazi and zodiac"
+    },
+    {
+      "label": "Western Astrology",
+      "file_type": "rationale",
+      "source_file": "fortune-telling/references/western.md",
+      "source_location": "lines 1-49",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Moon sign emotional weather, Mercury/Venus/Mars retrogrades, and void-of-course Moon for daily readings and specific questions",
+      "id": "fortune_telling_western",
+      "community": 3,
+      "norm_label": "western astrology"
+    },
+    {
+      "label": "Thai Day-of-Week Astrology",
+      "file_type": "rationale",
+      "source_file": "fortune-telling/references/thai-day-of-week.md",
+      "source_location": "lines 1-30",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Calendar-driven day-planet associations (Sun/Moon/Mars/Mercury/Rahu/Jupiter/Venus/Saturn) with lucky colors and energy themes, backbone for daily questions",
+      "id": "fortune_telling_thai",
+      "community": 3,
+      "norm_label": "thai day-of-week astrology"
+    },
+    {
+      "label": "Vedic Jyotish",
+      "file_type": "rationale",
+      "source_file": "fortune-telling/references/vedic.md",
+      "source_location": "lines 1-43",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Rahu Kalam inauspicious daily windows and Nakshatra lunar mansion flavors (soft/nourishing, sharp/fierce, mixed/movable) for timing and emotional weather",
+      "id": "fortune_telling_vedic",
+      "community": 3,
+      "norm_label": "vedic jyotish"
+    },
+    {
+      "label": "Interviewing Skill",
+      "file_type": "document",
+      "source_file": "interviewing/SKILL.md",
+      "source_location": "lines 1-17",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "interviewing_skill",
+      "community": 4,
+      "norm_label": "interviewing skill"
+    },
+    {
+      "label": "Competency-Based Interview Backbone",
+      "file_type": "rationale",
+      "source_file": "interviewing/SKILL.md",
+      "source_location": "lines 20-23",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Structural backbone of competency \u2192 behavioral evidence \u2192 calibrated judgment applies to both candidate prep and interviewer design",
+      "id": "interviewing_competency_backbone",
+      "community": 4,
+      "norm_label": "competency-based interview backbone"
+    },
+    {
+      "label": "Interviewee Prep Mode",
+      "file_type": "rationale",
+      "source_file": "interviewing/SKILL.md",
+      "source_location": "lines 37-38",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Candidate-side prep: decode role \u2192 STAR story bank \u2192 universals \u2192 role-specific layer \u2192 cross-cultural/format calibration \u2192 pre-mortem",
+      "id": "interviewing_interviewee_prep",
+      "community": 4,
+      "norm_label": "interviewee prep mode"
+    },
+    {
+      "label": "Interviewer Design Mode",
+      "file_type": "rationale",
+      "source_file": "interviewing/SKILL.md",
+      "source_location": "lines 38-39",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Interviewer-side design: job analysis \u2192 behavioral/situational questions \u2192 behaviorally-anchored rubric \u2192 loop structure \u2192 bias check \u2192 debrief protocol",
+      "id": "interviewing_interviewer_design",
+      "community": 4,
+      "norm_label": "interviewer design mode"
+    },
+    {
+      "label": "Interview Debrief Mode",
+      "file_type": "rationale",
+      "source_file": "interviewing/SKILL.md",
+      "source_location": "lines 39-40",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Post-interview learning: hygiene \u2192 diagnose specific moments \u2192 distinguish performance from process/luck \u2192 one thing to do differently",
+      "id": "interviewing_interview_debrief",
+      "community": 4,
+      "norm_label": "interview debrief mode"
+    },
+    {
+      "label": "Interviewee Prep Reference",
+      "file_type": "document",
+      "source_file": "interviewing/references/interviewee-prep.md",
+      "source_location": "lines 1-89",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "interviewee_prep_reference",
+      "community": 4,
+      "norm_label": "interviewee prep reference"
+    },
+    {
+      "label": "Interviewer Design Reference",
+      "file_type": "document",
+      "source_file": "interviewing/references/interviewer-design.md",
+      "source_location": "lines 1-76",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "interviewer_design_reference",
+      "community": 4,
+      "norm_label": "interviewer design reference"
+    },
+    {
+      "label": "Interview Debrief Reference",
+      "file_type": "document",
+      "source_file": "interviewing/references/interview-debrief.md",
+      "source_location": "lines 1-50",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "interview_debrief_reference",
+      "community": 4,
+      "norm_label": "interview debrief reference"
+    }
+  ],
+  "links": [
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "readme_project",
+      "target": "standards_authoring_standard"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "readme_project",
+      "target": "claude_project_instructions"
+    },
+    {
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "readme_project",
+      "target": "deciding_skill"
+    },
+    {
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "readme_project",
+      "target": "explaining_skill"
+    },
+    {
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "readme_project",
+      "target": "negotiating_skill"
+    },
+    {
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "readme_project",
+      "target": "ai_fluency_planning_skill"
+    },
+    {
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "readme_project",
+      "target": "thai_dish_picking_skill"
+    },
+    {
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "readme_project",
+      "target": "quick_answering_skill"
+    },
+    {
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "readme_project",
+      "target": "token_optimizing_skill"
+    },
+    {
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "readme_project",
+      "target": "executive_lensing_skill"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "claude_project_instructions",
+      "target": "standards_authoring_standard"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "standards_authoring_standard",
+      "target": "progressive_disclosure_pattern"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "standards_authoring_standard",
+      "target": "frontmatter_discovery"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "standards_authoring_standard",
+      "target": "eval_first_principle"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "standards_authoring_standard",
+      "target": "skill_naming_convention"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "standards_authoring_standard",
+      "target": "body_line_limit"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "standards_authoring_standard",
+      "target": "reference_depth_rule"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "standards_authoring_standard",
+      "target": "html_demo_safety_contract"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "standards_authoring_standard",
+      "target": "no_secrets_rule"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "standards_authoring_standard",
+      "target": "canonical_section_structure"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "standards_authoring_standard",
+      "target": "long_skill_variant"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "standards_authoring_standard",
+      "target": "subjective_skills_exemption"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "standards_authoring_standard",
+      "target": "anthropic_docs_precedence"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "claude_project_instructions",
+      "target": "template_skill_md"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "template_skill_md",
+      "target": "canonical_section_structure"
+    },
+    {
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source": "eval_first_principle",
+      "target": "template_evals_md"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "deciding_skill",
+      "target": "deciding_framework_ref"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source": "executive_lensing_skill",
+      "target": "deciding_skill"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source": "negotiating_skill",
+      "target": "deciding_skill"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "deciding_skill",
+      "target": "skill_chaining_pattern"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.65,
+      "source": "ai_fluency_planning_skill",
+      "target": "deciding_skill"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.55,
+      "source": "thai_dish_picking_skill",
+      "target": "deciding_skill"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source": "explaining_skill",
+      "target": "quick_answering_skill"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source": "skill_conflict_resolution",
+      "target": "explaining_skill"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "negotiating_skill",
+      "target": "skill_chaining_pattern"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "token_optimizing_skill",
+      "target": "token_optimizing_worked_example"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "token_optimizing_skill",
+      "target": "token_optimizing_quality_eval"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "token_optimizing_skill",
+      "target": "load_bearing_content_preservation"
+    },
+    {
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source": "token_optimizing_worked_example",
+      "target": "load_bearing_content_preservation"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "executive_lensing_skill",
+      "target": "skill_chaining_pattern"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "executive_lensing_skill",
+      "target": "executive_lensing_ceo_lens"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "executive_lensing_skill",
+      "target": "executive_lensing_cfo_lens"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "executive_lensing_skill",
+      "target": "executive_lensing_coo_lens"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "executive_lensing_skill",
+      "target": "executive_lensing_cmo_lens"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "executive_lensing_skill",
+      "target": "executive_lensing_cto_lens"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "executive_lensing_skill",
+      "target": "executive_lensing_chro_lens"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source": "progressive_disclosure_pattern",
+      "target": "frontmatter_discovery"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.65,
+      "source": "skill_naming_convention",
+      "target": "skill_chaining_pattern"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "html_demo_safety_contract",
+      "target": "no_secrets_rule"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "devil_advocating_skill",
+      "target": "devil_advocating_opposition_argument"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.65,
+      "source": "devil_advocating_skill",
+      "target": "working_through_skill"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.65,
+      "source": "researching_topics_skill",
+      "target": "devil_advocating_skill"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "researching_topics_skill",
+      "target": "researching_topics_forced_methodology"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "researching_topics_skill",
+      "target": "researching_topics_quick_scan"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "researching_topics_skill",
+      "target": "researching_topics_deep_dive"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "researching_topics_skill",
+      "target": "researching_topics_compare_options"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "working_through_skill",
+      "target": "working_through_learning_by_doing"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.55,
+      "source": "talking_it_out_skill",
+      "target": "working_through_skill"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "talking_it_out_skill",
+      "target": "talking_it_out_companion"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "talking_it_out_skill",
+      "target": "talking_it_out_vent_mode"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "talking_it_out_skill",
+      "target": "talking_it_out_process_mode"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "talking_it_out_skill",
+      "target": "talking_it_out_decide_mode"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "fortune_telling_skill",
+      "target": "fortune_telling_multi_tradition"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "fortune_telling_skill",
+      "target": "fortune_telling_specific_question"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "fortune_telling_skill",
+      "target": "fortune_telling_daily_luck"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "fortune_telling_skill",
+      "target": "fortune_telling_auspicious_timing"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "fortune_telling_multi_tradition",
+      "target": "fortune_telling_rokuyo"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "fortune_telling_multi_tradition",
+      "target": "fortune_telling_chinese"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "fortune_telling_multi_tradition",
+      "target": "fortune_telling_western"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "fortune_telling_multi_tradition",
+      "target": "fortune_telling_thai"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "fortune_telling_multi_tradition",
+      "target": "fortune_telling_vedic"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "interviewing_skill",
+      "target": "interviewing_competency_backbone"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "interviewing_skill",
+      "target": "interviewing_interviewee_prep"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "interviewing_skill",
+      "target": "interviewing_interviewer_design"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "interviewing_skill",
+      "target": "interviewing_interview_debrief"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "interviewing_interviewee_prep",
+      "target": "interviewee_prep_reference"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "interviewing_interviewer_design",
+      "target": "interviewer_design_reference"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "interviewing_interview_debrief",
+      "target": "interview_debrief_reference"
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "skill_authoring_workflow",
+      "label": "Skill Authoring Workflow",
+      "nodes": [
+        "eval_first_principle",
+        "template_evals_md",
+        "template_skill_md",
+        "canonical_section_structure",
+        "standards_authoring_standard"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95
+    },
+    {
+      "id": "skill_discovery_and_loading",
+      "label": "Skill Discovery and Loading Mechanism",
+      "nodes": [
+        "frontmatter_discovery",
+        "progressive_disclosure_pattern",
+        "skill_naming_convention",
+        "reference_depth_rule"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85
+    },
+    {
+      "id": "skill_safety_and_governance",
+      "label": "Skill Safety and Governance",
+      "nodes": [
+        "no_secrets_rule",
+        "html_demo_safety_contract",
+        "anthropic_docs_precedence",
+        "load_bearing_content_preservation"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85
+    },
+    {
+      "id": "reasoning_skill_family",
+      "label": "Reasoning Skill Family (Decision & Analysis)",
+      "nodes": [
+        "deciding_skill",
+        "executive_lensing_skill",
+        "negotiating_skill",
+        "skill_chaining_pattern"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8
+    },
+    {
+      "id": "executive_suite_analysis",
+      "label": "Executive Suite Multi-Lens Analysis",
+      "nodes": [
+        "executive_lensing_ceo_lens",
+        "executive_lensing_cfo_lens",
+        "executive_lensing_coo_lens",
+        "executive_lensing_cmo_lens",
+        "executive_lensing_cto_lens",
+        "executive_lensing_chro_lens"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0
+    },
+    {
+      "id": "divination_tradition_system",
+      "label": "Multi-Tradition Divination System",
+      "nodes": [
+        "fortune_telling_rokuyo",
+        "fortune_telling_chinese",
+        "fortune_telling_western",
+        "fortune_telling_thai",
+        "fortune_telling_vedic"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0
+    },
+    {
+      "id": "interview_process_workflow",
+      "label": "Interview Process Workflow",
+      "nodes": [
+        "interviewing_interviewee_prep",
+        "interviewing_interviewer_design",
+        "interviewing_interview_debrief"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0
+    },
+    {
+      "id": "user_support_spectrum",
+      "label": "User Support Spectrum Skills",
+      "nodes": [
+        "talking_it_out_skill",
+        "working_through_skill",
+        "devil_advocating_skill",
+        "researching_topics_skill"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75
+    }
+  ]
+}
