@@ -1,25 +1,102 @@
-{
-  "_comment": "Trigger eval for devil-advocating skill. 10 should-trigger + 10 should-not-trigger = 20 cases. Negative cases test the line between 'red-team my position' (fires) and 'give me a balanced view' or 'argue this for a debate class' (does not fire). The skill produces one-sided opposition; balanced critique is a different ask.",
-  "evals": [
-    {"query": "/devil-advocating", "should_trigger": true, "category": "explicit_slash_command"},
-    {"query": "I think we should adopt microservices for our 10-person team. red team this for me — what's the strongest case against?", "should_trigger": true, "category": "explicit_red_team_request"},
-    {"query": "I'm convinced we should move to a 4-day work week. argue against me as hard as you can.", "should_trigger": true, "category": "stress_test_personal_position"},
-    {"query": "stress test my plan to leave my job and start a consulting firm. don't be balanced, be the harshest critic", "should_trigger": true, "category": "explicit_harshest_critic"},
-    {"query": "what's the strongest case against this thesis: that AI coding assistants will commoditize junior developer work in 3 years?", "should_trigger": true, "category": "thesis_strongest_against"},
-    {"query": "I'm leaning toward selling the house and renting. tell me why I'm wrong.", "should_trigger": true, "category": "personal_decision_steelman_against"},
-    {"query": "argue against my position that we should kill the legacy product line", "should_trigger": true, "category": "business_position_argue_against"},
-    {"query": "I want a smart opponent's view on why I shouldn't take this acquisition offer. give me their best case.", "should_trigger": true, "category": "opponent_view_explicit"},
-    {"query": "tear apart my pitch deck thesis. I need to hear what investors are going to push back with before Friday.", "should_trigger": true, "category": "pre_meeting_preparation"},
-    {"query": "I genuinely believe remote-first is better for our company. convince me I'm wrong.", "should_trigger": true, "category": "convince_me_wrong"},
-    {"query": "what are the pros and cons of microservices for small teams?", "should_trigger": false, "category": "balanced_pros_cons_request"},
-    {"query": "give me both sides of the work-from-home debate", "should_trigger": false, "category": "balanced_both_sides"},
-    {"query": "I'm preparing for a debate class — argue the AGAINST side of 'social media has been net-positive for society'", "should_trigger": false, "category": "debate_class_writing_exercise"},
-    {"query": "what's an argument someone might make against electric vehicles?", "should_trigger": false, "category": "rhetoric_for_someone_else"},
-    {"query": "explain why some economists think rent control is bad policy", "should_trigger": false, "category": "explain_existing_argument"},
-    {"query": "I had a fight with my partner. they think I'm wrong about something — help me see their side", "should_trigger": false, "category": "interpersonal_perspective_taking"},
-    {"query": "play devil's advocate but be balanced about it", "should_trigger": false, "category": "wants_balance_skill_doesnt_balance"},
-    {"query": "I don't have a position yet — I'm trying to figure out what I think about this. show me both sides", "should_trigger": false, "category": "no_position_yet"},
-    {"query": "write me a counter-argument to this essay I'm grading", "should_trigger": false, "category": "essay_grading_writing_task"},
-    {"query": "what counter-arguments do startup investors typically use against bootstrapped founders?", "should_trigger": false, "category": "factual_question_about_arguments"}
-  ]
-}
+[
+  {
+    "query": "/devil-advocating",
+    "should_trigger": true,
+    "category": "explicit_slash_command"
+  },
+  {
+    "query": "I think we should adopt microservices for our 10-person team. red team this for me \u2014 what's the strongest case against?",
+    "should_trigger": true,
+    "category": "explicit_red_team_request"
+  },
+  {
+    "query": "I'm convinced we should move to a 4-day work week. argue against me as hard as you can.",
+    "should_trigger": true,
+    "category": "stress_test_personal_position"
+  },
+  {
+    "query": "stress test my plan to leave my job and start a consulting firm. don't be balanced, be the harshest critic",
+    "should_trigger": true,
+    "category": "explicit_harshest_critic"
+  },
+  {
+    "query": "what's the strongest case against this thesis: that AI coding assistants will commoditize junior developer work in 3 years?",
+    "should_trigger": true,
+    "category": "thesis_strongest_against"
+  },
+  {
+    "query": "I'm leaning toward selling the house and renting. tell me why I'm wrong.",
+    "should_trigger": true,
+    "category": "personal_decision_steelman_against"
+  },
+  {
+    "query": "argue against my position that we should kill the legacy product line",
+    "should_trigger": true,
+    "category": "business_position_argue_against"
+  },
+  {
+    "query": "I want a smart opponent's view on why I shouldn't take this acquisition offer. give me their best case.",
+    "should_trigger": true,
+    "category": "opponent_view_explicit"
+  },
+  {
+    "query": "tear apart my pitch deck thesis. I need to hear what investors are going to push back with before Friday.",
+    "should_trigger": true,
+    "category": "pre_meeting_preparation"
+  },
+  {
+    "query": "I genuinely believe remote-first is better for our company. convince me I'm wrong.",
+    "should_trigger": true,
+    "category": "convince_me_wrong"
+  },
+  {
+    "query": "what are the pros and cons of microservices for small teams?",
+    "should_trigger": false,
+    "category": "balanced_pros_cons_request"
+  },
+  {
+    "query": "give me both sides of the work-from-home debate",
+    "should_trigger": false,
+    "category": "balanced_both_sides"
+  },
+  {
+    "query": "I'm preparing for a debate class \u2014 argue the AGAINST side of 'social media has been net-positive for society'",
+    "should_trigger": false,
+    "category": "debate_class_writing_exercise"
+  },
+  {
+    "query": "what's an argument someone might make against electric vehicles?",
+    "should_trigger": false,
+    "category": "rhetoric_for_someone_else"
+  },
+  {
+    "query": "explain why some economists think rent control is bad policy",
+    "should_trigger": false,
+    "category": "explain_existing_argument"
+  },
+  {
+    "query": "I had a fight with my partner. they think I'm wrong about something \u2014 help me see their side",
+    "should_trigger": false,
+    "category": "interpersonal_perspective_taking"
+  },
+  {
+    "query": "play devil's advocate but be balanced about it",
+    "should_trigger": false,
+    "category": "wants_balance_skill_doesnt_balance"
+  },
+  {
+    "query": "I don't have a position yet \u2014 I'm trying to figure out what I think about this. show me both sides",
+    "should_trigger": false,
+    "category": "no_position_yet"
+  },
+  {
+    "query": "write me a counter-argument to this essay I'm grading",
+    "should_trigger": false,
+    "category": "essay_grading_writing_task"
+  },
+  {
+    "query": "what counter-arguments do startup investors typically use against bootstrapped founders?",
+    "should_trigger": false,
+    "category": "factual_question_about_arguments"
+  }
+]

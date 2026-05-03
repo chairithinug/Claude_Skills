@@ -280,7 +280,18 @@ Quality evals are **mandatory for skills with objectively verifiable outputs** �
 
 Quality evals are **optional for subjective skills** — reasoning, coaching, persuasion, judgment-laden analysis, anything where the "right" output is a matter of taste, framing, or context. Forcing quality grading on a skill like `/devil-advocating` produces noise (graders disagree) and tempts overfitting (the skill optimizes for whatever graders happen to score well, which is not the same as "argues well"). For these skills, the human review step in the iteration loop carries the load.
 
-**Trigger evals are recommended for every skill regardless of category.** A skill that doesn't trigger reliably is broken even if its body is brilliant. 10–20 trigger queries (mix of should-fire and should-not-fire) plus `run_loop.py` is the cheapest path to confidence here. See skill-creator's `references/schemas.md` for the format.
+**Trigger evals are recommended for every skill regardless of category.** A skill that doesn't trigger reliably is broken even if its body is brilliant. 10–20 trigger queries (mix of should-fire and should-not-fire) plus `run_loop.py` is the cheapest path to confidence here.
+
+**Trigger eval file format.** `<skill>/evals/trigger-eval.json` must be a **flat top-level JSON array** of objects, each with `query` (string), `should_trigger` (bool), and optionally `category` (string for grouping in reports). No wrapper object, no `_comment` key — `run_loop.py` calls `json.load` and iterates the result directly, so a wrapper breaks the loop with a `TypeError`. Conventional shape:
+
+```json
+[
+  {"query": "explicit slash command or sentence", "should_trigger": true, "category": "explicit_invocation"},
+  {"query": "near-miss that should not fire", "should_trigger": false, "category": "adjacent_skill_territory"}
+]
+```
+
+Aim for ~10 should-fire and ~10 should-not-fire. Negatives carry the load — pick *near-misses* (adjacent skills, theoretical questions, factual lookups in the same domain) rather than obvious noise. See skill-creator's `references/schemas.md` for the canonical reference.
 
 `_template/evals.md` provides the scaffold for step 2.
 

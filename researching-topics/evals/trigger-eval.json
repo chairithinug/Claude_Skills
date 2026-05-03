@@ -1,25 +1,102 @@
-{
-  "_comment": "Trigger eval for researching-topics skill. 10 should-trigger + 10 should-not-trigger = 20 cases. Skill applies a six-step methodology to substantive topic research. Negatives include simple lookups (no methodology needed), how-to questions (different shape), code questions (different domain), and single-claim verification (lighter than research).",
-  "evals": [
-    {"query": "/researching-topics", "should_trigger": true, "category": "explicit_slash_command"},
-    {"query": "research whether GraphQL is still worth adopting in 2026 for new projects", "should_trigger": true, "category": "tech_adoption_research"},
-    {"query": "look into the current state of small modular reactor deployments. I want a thorough view, not a snapshot", "should_trigger": true, "category": "deep_dive_explicit_thorough"},
-    {"query": "I'm trying to build a view on whether AI coding assistants are commoditizing junior dev work. give me a real research pass", "should_trigger": true, "category": "build_a_view_research"},
-    {"query": "compare Pinecone vs Weaviate vs Qdrant for our vector store. consistent criteria please", "should_trigger": true, "category": "compare_options_named"},
-    {"query": "what's the story with the EU AI Act compliance deadlines? I keep seeing different things", "should_trigger": true, "category": "whats_the_story_substantive"},
-    {"query": "investigate the trade-offs between content moderation policies on different social platforms — I want a layered view", "should_trigger": true, "category": "investigate_layered_view"},
-    {"query": "do a deep dive on whether four-day workweek pilots have actually shown sustainable productivity gains", "should_trigger": true, "category": "explicit_deep_dive"},
-    {"query": "should I use Bun or Node for a new server-side project? I want this researched, not vibes", "should_trigger": true, "category": "should_i_decision_dependent_on_research"},
-    {"query": "look into the AI Fluency framework — who's using it, what's the evidence base, what are critics saying?", "should_trigger": true, "category": "look_into_with_multiple_angles"},
-    {"query": "what year did GraphQL launch?", "should_trigger": false, "category": "simple_factual_lookup"},
-    {"query": "who is the CEO of OpenAI?", "should_trigger": false, "category": "simple_who_is"},
-    {"query": "how do I write a Postgres query with a window function?", "should_trigger": false, "category": "how_to_procedural"},
-    {"query": "is it true that goldfish have a 3-second memory?", "should_trigger": false, "category": "single_claim_verification"},
-    {"query": "fix this React hook error: 'too many re-renders'", "should_trigger": false, "category": "code_debugging"},
-    {"query": "what's your opinion on whether everyone should learn to code?", "should_trigger": false, "category": "opinion_request_not_research"},
-    {"query": "summarize this article I just shared", "should_trigger": false, "category": "summarization_no_research"},
-    {"query": "translate this paragraph from German to English", "should_trigger": false, "category": "translation"},
-    {"query": "what's the population of Tokyo?", "should_trigger": false, "category": "simple_data_lookup"},
-    {"query": "rewrite this email to sound more confident", "should_trigger": false, "category": "writing_task"}
-  ]
-}
+[
+  {
+    "query": "/researching-topics",
+    "should_trigger": true,
+    "category": "explicit_slash_command"
+  },
+  {
+    "query": "research whether GraphQL is still worth adopting in 2026 for new projects",
+    "should_trigger": true,
+    "category": "tech_adoption_research"
+  },
+  {
+    "query": "look into the current state of small modular reactor deployments. I want a thorough view, not a snapshot",
+    "should_trigger": true,
+    "category": "deep_dive_explicit_thorough"
+  },
+  {
+    "query": "I'm trying to build a view on whether AI coding assistants are commoditizing junior dev work. give me a real research pass",
+    "should_trigger": true,
+    "category": "build_a_view_research"
+  },
+  {
+    "query": "compare Pinecone vs Weaviate vs Qdrant for our vector store. consistent criteria please",
+    "should_trigger": true,
+    "category": "compare_options_named"
+  },
+  {
+    "query": "what's the story with the EU AI Act compliance deadlines? I keep seeing different things",
+    "should_trigger": true,
+    "category": "whats_the_story_substantive"
+  },
+  {
+    "query": "investigate the trade-offs between content moderation policies on different social platforms \u2014 I want a layered view",
+    "should_trigger": true,
+    "category": "investigate_layered_view"
+  },
+  {
+    "query": "do a deep dive on whether four-day workweek pilots have actually shown sustainable productivity gains",
+    "should_trigger": true,
+    "category": "explicit_deep_dive"
+  },
+  {
+    "query": "should I use Bun or Node for a new server-side project? I want this researched, not vibes",
+    "should_trigger": true,
+    "category": "should_i_decision_dependent_on_research"
+  },
+  {
+    "query": "look into the AI Fluency framework \u2014 who's using it, what's the evidence base, what are critics saying?",
+    "should_trigger": true,
+    "category": "look_into_with_multiple_angles"
+  },
+  {
+    "query": "what year did GraphQL launch?",
+    "should_trigger": false,
+    "category": "simple_factual_lookup"
+  },
+  {
+    "query": "who is the CEO of OpenAI?",
+    "should_trigger": false,
+    "category": "simple_who_is"
+  },
+  {
+    "query": "how do I write a Postgres query with a window function?",
+    "should_trigger": false,
+    "category": "how_to_procedural"
+  },
+  {
+    "query": "is it true that goldfish have a 3-second memory?",
+    "should_trigger": false,
+    "category": "single_claim_verification"
+  },
+  {
+    "query": "fix this React hook error: 'too many re-renders'",
+    "should_trigger": false,
+    "category": "code_debugging"
+  },
+  {
+    "query": "what's your opinion on whether everyone should learn to code?",
+    "should_trigger": false,
+    "category": "opinion_request_not_research"
+  },
+  {
+    "query": "summarize this article I just shared",
+    "should_trigger": false,
+    "category": "summarization_no_research"
+  },
+  {
+    "query": "translate this paragraph from German to English",
+    "should_trigger": false,
+    "category": "translation"
+  },
+  {
+    "query": "what's the population of Tokyo?",
+    "should_trigger": false,
+    "category": "simple_data_lookup"
+  },
+  {
+    "query": "rewrite this email to sound more confident",
+    "should_trigger": false,
+    "category": "writing_task"
+  }
+]

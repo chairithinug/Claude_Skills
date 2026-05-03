@@ -1,25 +1,102 @@
-{
-  "_comment": "Trigger eval for deciding skill. 10 should-trigger + 10 should-not-trigger = 20 cases. Negative cases are near-misses: factual lookups, post-decision asks, preference questions without commitment, and other decision-adjacent queries that don't need the six-step framework.",
-  "evals": [
-    {"query": "/deciding", "should_trigger": true, "category": "explicit_slash_command"},
-    {"query": "I'm trying to decide whether to leave my engineering job to go independent. Help me think this through.", "should_trigger": true, "category": "career_decision_explicit"},
-    {"query": "should I take the job offer in Berlin or stay in my current role? lots of variables", "should_trigger": true, "category": "binary_choice_with_complexity"},
-    {"query": "we're choosing between Postgres, MySQL, and DynamoDB for our event store. need to think through the trade-offs systematically", "should_trigger": true, "category": "technical_choice_systematic"},
-    {"query": "trying to figure out whether to ship the v2 in January or wait for Q2. tradeoffs are getting fuzzy in my head, can you walk me through it", "should_trigger": true, "category": "timing_decision_walk_through"},
-    {"query": "help me decide between three apartment options. each has different tradeoffs and I keep flip-flopping", "should_trigger": true, "category": "multi_option_personal_decision"},
-    {"query": "I have a real choice to make about whether to take a co-founder on for my project. need to think through it properly, not just go with my gut", "should_trigger": true, "category": "high_stakes_explicit_systematic"},
-    {"query": "should I sell now or hold? this is the kind of thing I usually mess up by not thinking through clearly", "should_trigger": true, "category": "investment_decision_with_self_awareness"},
-    {"query": "trying to choose between two grad school programs. one is more prestigious, the other has better fit. help me work through it", "should_trigger": true, "category": "education_decision_two_options"},
-    {"query": "we keep going back and forth on whether to outsource customer support. help me actually decide", "should_trigger": true, "category": "stalled_decision_help_close"},
-    {"query": "what year did Postgres add JSONB support?", "should_trigger": false, "category": "factual_lookup"},
-    {"query": "I already chose Postgres for the event store. now what's the best schema design?", "should_trigger": false, "category": "post_decision_implementation"},
-    {"query": "which is generally better, Postgres or MySQL?", "should_trigger": false, "category": "preference_no_actual_choice"},
-    {"query": "what are the pros and cons of going independent vs staying employed? just curious, not deciding for myself", "should_trigger": false, "category": "tradeoff_information_no_commitment"},
-    {"query": "explain how decision matrices work as a tool", "should_trigger": false, "category": "framework_theory_question"},
-    {"query": "I made a bad decision last month and I'm beating myself up about it. how do I move on?", "should_trigger": false, "category": "post_decision_emotional_processing"},
-    {"query": "what's the typical salary range for senior engineers in Berlin?", "should_trigger": false, "category": "data_lookup_decision_adjacent"},
-    {"query": "should I drink coffee or tea this morning?", "should_trigger": false, "category": "trivial_choice_no_real_stakes"},
-    {"query": "my partner and I disagree on a big purchase. how do I have that conversation with them?", "should_trigger": false, "category": "communication_help_not_decision_framework"},
-    {"query": "I keep regretting decisions after I make them. is that normal?", "should_trigger": false, "category": "psychological_pattern_question"}
-  ]
-}
+[
+  {
+    "query": "/deciding",
+    "should_trigger": true,
+    "category": "explicit_slash_command"
+  },
+  {
+    "query": "I'm trying to decide whether to leave my engineering job to go independent. Help me think this through.",
+    "should_trigger": true,
+    "category": "career_decision_explicit"
+  },
+  {
+    "query": "should I take the job offer in Berlin or stay in my current role? lots of variables",
+    "should_trigger": true,
+    "category": "binary_choice_with_complexity"
+  },
+  {
+    "query": "we're choosing between Postgres, MySQL, and DynamoDB for our event store. need to think through the trade-offs systematically",
+    "should_trigger": true,
+    "category": "technical_choice_systematic"
+  },
+  {
+    "query": "trying to figure out whether to ship the v2 in January or wait for Q2. tradeoffs are getting fuzzy in my head, can you walk me through it",
+    "should_trigger": true,
+    "category": "timing_decision_walk_through"
+  },
+  {
+    "query": "help me decide between three apartment options. each has different tradeoffs and I keep flip-flopping",
+    "should_trigger": true,
+    "category": "multi_option_personal_decision"
+  },
+  {
+    "query": "I have a real choice to make about whether to take a co-founder on for my project. need to think through it properly, not just go with my gut",
+    "should_trigger": true,
+    "category": "high_stakes_explicit_systematic"
+  },
+  {
+    "query": "should I sell now or hold? this is the kind of thing I usually mess up by not thinking through clearly",
+    "should_trigger": true,
+    "category": "investment_decision_with_self_awareness"
+  },
+  {
+    "query": "trying to choose between two grad school programs. one is more prestigious, the other has better fit. help me work through it",
+    "should_trigger": true,
+    "category": "education_decision_two_options"
+  },
+  {
+    "query": "we keep going back and forth on whether to outsource customer support. help me actually decide",
+    "should_trigger": true,
+    "category": "stalled_decision_help_close"
+  },
+  {
+    "query": "what year did Postgres add JSONB support?",
+    "should_trigger": false,
+    "category": "factual_lookup"
+  },
+  {
+    "query": "I already chose Postgres for the event store. now what's the best schema design?",
+    "should_trigger": false,
+    "category": "post_decision_implementation"
+  },
+  {
+    "query": "which is generally better, Postgres or MySQL?",
+    "should_trigger": false,
+    "category": "preference_no_actual_choice"
+  },
+  {
+    "query": "what are the pros and cons of going independent vs staying employed? just curious, not deciding for myself",
+    "should_trigger": false,
+    "category": "tradeoff_information_no_commitment"
+  },
+  {
+    "query": "explain how decision matrices work as a tool",
+    "should_trigger": false,
+    "category": "framework_theory_question"
+  },
+  {
+    "query": "I made a bad decision last month and I'm beating myself up about it. how do I move on?",
+    "should_trigger": false,
+    "category": "post_decision_emotional_processing"
+  },
+  {
+    "query": "what's the typical salary range for senior engineers in Berlin?",
+    "should_trigger": false,
+    "category": "data_lookup_decision_adjacent"
+  },
+  {
+    "query": "should I drink coffee or tea this morning?",
+    "should_trigger": false,
+    "category": "trivial_choice_no_real_stakes"
+  },
+  {
+    "query": "my partner and I disagree on a big purchase. how do I have that conversation with them?",
+    "should_trigger": false,
+    "category": "communication_help_not_decision_framework"
+  },
+  {
+    "query": "I keep regretting decisions after I make them. is that normal?",
+    "should_trigger": false,
+    "category": "psychological_pattern_question"
+  }
+]

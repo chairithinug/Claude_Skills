@@ -1,0 +1,6 @@
+[
+  {"query": "/<skill-name>", "should_trigger": true, "category": "explicit_slash_command"},
+  {"query": "<a natural-language phrase that should fire the skill>", "should_trigger": true, "category": "natural_invocation"},
+  {"query": "<a near-miss that should NOT fire — adjacent territory of another skill>", "should_trigger": false, "category": "adjacent_skill_territory"},
+  {"query": "<a factual or theoretical question about this skill's domain that should NOT fire>", "should_trigger": false, "category": "factual_question"}
+]

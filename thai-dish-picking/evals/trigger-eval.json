@@ -1,25 +1,102 @@
-{
-  "_comment": "Trigger eval for thai-dish-picking skill. 10 should-trigger + 10 should-not-trigger = 20 cases. Mix of English and Thai-script positive cases. Negatives test the 'NOT for restaurant-finding, recipes, or non-Thai cuisine' rule from the description.",
-  "evals": [
-    {"query": "/thai-dish-picking", "should_trigger": true, "category": "explicit_slash_command"},
-    {"query": "what should I eat for lunch? in Thailand, mood is meh, weather is hot", "should_trigger": true, "category": "lunch_with_context"},
-    {"query": "กินอะไรดี อยู่กรุงเทพ ตอนนี้ร้อนมาก", "should_trigger": true, "category": "thai_script_explicit"},
-    {"query": "I'm hungry, you pick something Thai for me. I had pad krapao yesterday", "should_trigger": true, "category": "you_pick_with_avoid"},
-    {"query": "ไม่รู้จะกินอะไร ช่วยแนะนำหน่อย แถวสีลม", "should_trigger": true, "category": "thai_dont_know_what_to_eat"},
-    {"query": "lunch ideas — something light, kind of hot today, near a Central food court", "should_trigger": true, "category": "lunch_with_constraints"},
-    {"query": "เมนูแนะนำสำหรับเย็นนี้ อยากกินอะไรไม่ซ้ำกับมื้อเที่ยง (ผัดไทย)", "should_trigger": true, "category": "thai_avoid_repeat"},
-    {"query": "you pick. ไรก็ได้ but make it interesting, not the famous-tourist stuff", "should_trigger": true, "category": "full_agency_not_tourist"},
-    {"query": "I want noodles but not pad thai. what else is there in Thailand worth eating?", "should_trigger": true, "category": "constraint_with_explicit_anti_autopilot"},
-    {"query": "vegetarian Thai lunch in Bangkok — the actual range, not just pad thai with no shrimp", "should_trigger": true, "category": "dietary_constraint_with_anti_autopilot"},
-    {"query": "where's the best place to eat pad thai in Bangkok?", "should_trigger": false, "category": "restaurant_finding"},
-    {"query": "how do I make tom yum kung at home?", "should_trigger": false, "category": "recipe_request"},
-    {"query": "what's the difference between Northern and Southern Thai cuisine?", "should_trigger": false, "category": "cuisine_overview"},
-    {"query": "I'm in Tokyo, what should I eat for lunch?", "should_trigger": false, "category": "non_thai_food_question"},
-    {"query": "explain what som tam is — I've never had it", "should_trigger": false, "category": "single_dish_explanation"},
-    {"query": "is Thai food generally healthy?", "should_trigger": false, "category": "health_question_about_cuisine"},
-    {"query": "I want to learn to cook one new Thai dish a week. where should I start?", "should_trigger": false, "category": "cooking_journey_not_picker"},
-    {"query": "best Thai restaurants in San Francisco?", "should_trigger": false, "category": "restaurant_finding_diaspora"},
-    {"query": "what should I eat for breakfast in Vietnam?", "should_trigger": false, "category": "different_cuisine_country"},
-    {"query": "ราคาผัดไทยที่ห้าง อยากรู้ว่าแพงไปไหม", "should_trigger": false, "category": "thai_pricing_question_not_picker"}
-  ]
-}
+[
+  {
+    "query": "/thai-dish-picking",
+    "should_trigger": true,
+    "category": "explicit_slash_command"
+  },
+  {
+    "query": "what should I eat for lunch? in Thailand, mood is meh, weather is hot",
+    "should_trigger": true,
+    "category": "lunch_with_context"
+  },
+  {
+    "query": "\u0e01\u0e34\u0e19\u0e2d\u0e30\u0e44\u0e23\u0e14\u0e35 \u0e2d\u0e22\u0e39\u0e48\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e \u0e15\u0e2d\u0e19\u0e19\u0e35\u0e49\u0e23\u0e49\u0e2d\u0e19\u0e21\u0e32\u0e01",
+    "should_trigger": true,
+    "category": "thai_script_explicit"
+  },
+  {
+    "query": "I'm hungry, you pick something Thai for me. I had pad krapao yesterday",
+    "should_trigger": true,
+    "category": "you_pick_with_avoid"
+  },
+  {
+    "query": "\u0e44\u0e21\u0e48\u0e23\u0e39\u0e49\u0e08\u0e30\u0e01\u0e34\u0e19\u0e2d\u0e30\u0e44\u0e23 \u0e0a\u0e48\u0e27\u0e22\u0e41\u0e19\u0e30\u0e19\u0e33\u0e2b\u0e19\u0e48\u0e2d\u0e22 \u0e41\u0e16\u0e27\u0e2a\u0e35\u0e25\u0e21",
+    "should_trigger": true,
+    "category": "thai_dont_know_what_to_eat"
+  },
+  {
+    "query": "lunch ideas \u2014 something light, kind of hot today, near a Central food court",
+    "should_trigger": true,
+    "category": "lunch_with_constraints"
+  },
+  {
+    "query": "\u0e40\u0e21\u0e19\u0e39\u0e41\u0e19\u0e30\u0e19\u0e33\u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a\u0e40\u0e22\u0e47\u0e19\u0e19\u0e35\u0e49 \u0e2d\u0e22\u0e32\u0e01\u0e01\u0e34\u0e19\u0e2d\u0e30\u0e44\u0e23\u0e44\u0e21\u0e48\u0e0b\u0e49\u0e33\u0e01\u0e31\u0e1a\u0e21\u0e37\u0e49\u0e2d\u0e40\u0e17\u0e35\u0e48\u0e22\u0e07 (\u0e1c\u0e31\u0e14\u0e44\u0e17\u0e22)",
+    "should_trigger": true,
+    "category": "thai_avoid_repeat"
+  },
+  {
+    "query": "you pick. \u0e44\u0e23\u0e01\u0e47\u0e44\u0e14\u0e49 but make it interesting, not the famous-tourist stuff",
+    "should_trigger": true,
+    "category": "full_agency_not_tourist"
+  },
+  {
+    "query": "I want noodles but not pad thai. what else is there in Thailand worth eating?",
+    "should_trigger": true,
+    "category": "constraint_with_explicit_anti_autopilot"
+  },
+  {
+    "query": "vegetarian Thai lunch in Bangkok \u2014 the actual range, not just pad thai with no shrimp",
+    "should_trigger": true,
+    "category": "dietary_constraint_with_anti_autopilot"
+  },
+  {
+    "query": "where's the best place to eat pad thai in Bangkok?",
+    "should_trigger": false,
+    "category": "restaurant_finding"
+  },
+  {
+    "query": "how do I make tom yum kung at home?",
+    "should_trigger": false,
+    "category": "recipe_request"
+  },
+  {
+    "query": "what's the difference between Northern and Southern Thai cuisine?",
+    "should_trigger": false,
+    "category": "cuisine_overview"
+  },
+  {
+    "query": "I'm in Tokyo, what should I eat for lunch?",
+    "should_trigger": false,
+    "category": "non_thai_food_question"
+  },
+  {
+    "query": "explain what som tam is \u2014 I've never had it",
+    "should_trigger": false,
+    "category": "single_dish_explanation"
+  },
+  {
+    "query": "is Thai food generally healthy?",
+    "should_trigger": false,
+    "category": "health_question_about_cuisine"
+  },
+  {
+    "query": "I want to learn to cook one new Thai dish a week. where should I start?",
+    "should_trigger": false,
+    "category": "cooking_journey_not_picker"
+  },
+  {
+    "query": "best Thai restaurants in San Francisco?",
+    "should_trigger": false,
+    "category": "restaurant_finding_diaspora"
+  },
+  {
+    "query": "what should I eat for breakfast in Vietnam?",
+    "should_trigger": false,
+    "category": "different_cuisine_country"
+  },
+  {
+    "query": "\u0e23\u0e32\u0e04\u0e32\u0e1c\u0e31\u0e14\u0e44\u0e17\u0e22\u0e17\u0e35\u0e48\u0e2b\u0e49\u0e32\u0e07 \u0e2d\u0e22\u0e32\u0e01\u0e23\u0e39\u0e49\u0e27\u0e48\u0e32\u0e41\u0e1e\u0e07\u0e44\u0e1b\u0e44\u0e2b\u0e21",
+    "should_trigger": false,
+    "category": "thai_pricing_question_not_picker"
+  }
+]

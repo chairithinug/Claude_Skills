@@ -1,105 +1,102 @@
-{
-  "_comment": "Trigger eval for token-optimize skill. 13 positive + 7 negative = 20 cases. Used with skill-creator's run_loop.py to optimize the skill description for triggering accuracy. Each query is run multiple times to get a stable trigger rate. The mix exercises explicit invocations, indirect cost/latency complaints, implicit pastes of bloated prompts, and lookalike cases that should NOT trigger (general LLM theory, model selection, infra cost, code optimization).",
-  "evals": [
-    {
-      "query": "/token-optimizing",
-      "should_trigger": true,
-      "category": "explicit_slash_command"
-    },
-    {
-      "query": "Can you compress this prompt for me?\n\n```\nYou are a brilliant, world-class AI assistant with deep expertise in customer support. Please carefully read the customer's message and, taking a deep breath and thinking step by step, kindly classify it into one of these categories: billing, technical, account, or other. Please make sure to be accurate. Thank you so much for your help!\n\nCustomer message: {message}\n```",
-      "should_trigger": true,
-      "category": "explicit_compress_with_paste"
-    },
-    {
-      "query": "My LLM bills are getting out of hand. Here's the system prompt I'm running 50k times a day on Claude — can you help me cut costs without breaking it? [bloated 2000-token prompt would follow]",
-      "should_trigger": true,
-      "category": "cost_complaint_with_paste_intent"
-    },
-    {
-      "query": "I'm hitting context window limits on this RAG pipeline. The retrieved chunks plus the system prompt plus the conversation history is over 100k tokens. What can I trim?",
-      "should_trigger": true,
-      "category": "context_limit_pressure"
-    },
-    {
-      "query": "This few-shot block has 8 examples, do I really need all of them?",
-      "should_trigger": true,
-      "category": "few_shot_review"
-    },
-    {
-      "query": "Tighten this up for me, it feels bloated.\n\n[long prompt paste]",
-      "should_trigger": true,
-      "category": "tighten_verb"
-    },
-    {
-      "query": "How do I reduce the number of tokens in this Claude prompt without breaking the output quality?",
-      "should_trigger": true,
-      "category": "explicit_reduce_tokens"
-    },
-    {
-      "query": "Can you review my agent system prompt for bloat? It's grown organically and I think there's a lot of fat to cut.",
-      "should_trigger": true,
-      "category": "bloat_review_request"
-    },
-    {
-      "query": "The latency on my LLM endpoint is awful, p95 is 4 seconds. Here's the prompt I'm sending — can we cut it down?",
-      "should_trigger": true,
-      "category": "latency_complaint_with_paste_intent"
-    },
-    {
-      "query": "I'm using GPT-4o for a classification task and it's costing me $400/day. Here's the prompt — what would you change?",
-      "should_trigger": true,
-      "category": "cost_with_specific_workload"
-    },
-    {
-      "query": "Honest review of my agent system prompt:\n\n```\n[3000-token prompt with role flattery, redundant rules, 8 examples, verbose tool descriptions]\n```\n\nWhat do you think?",
-      "should_trigger": true,
-      "category": "implicit_review_via_substantial_paste"
-    },
-    {
-      "query": "I want to shorten this RAG context window while keeping answer correctness. Here's a sample retrieved-chunks bundle and the user query format.",
-      "should_trigger": true,
-      "category": "rag_specific_compression"
-    },
-    {
-      "query": "Optimize this prompt for production deployment.\n\n[long prompt]",
-      "should_trigger": true,
-      "category": "production_optimize_request"
-    },
-    {
-      "query": "Write me a haiku about autumn leaves.",
-      "should_trigger": false,
-      "category": "unrelated_creative"
-    },
-    {
-      "query": "Fix this Python null pointer exception in my code.",
-      "should_trigger": false,
-      "category": "code_debugging"
-    },
-    {
-      "query": "Optimize this SQL query for speed:\n\nSELECT * FROM orders WHERE customer_id IN (SELECT id FROM customers WHERE region = 'APAC')",
-      "should_trigger": false,
-      "category": "sql_optimization_lookalike"
-    },
-    {
-      "query": "Explain how transformer attention works at a high level.",
-      "should_trigger": false,
-      "category": "ml_theory"
-    },
-    {
-      "query": "Which LLM should I use for a code generation task — Claude, GPT-4, or Gemini?",
-      "should_trigger": false,
-      "category": "model_selection"
-    },
-    {
-      "query": "How do I lower my AWS bill? My EC2 spend is way too high.",
-      "should_trigger": false,
-      "category": "cloud_infra_cost_lookalike"
-    },
-    {
-      "query": "What is prompt engineering and why does it matter?",
-      "should_trigger": false,
-      "category": "conceptual_question"
-    }
-  ]
-}
+[
+  {
+    "query": "/token-optimizing",
+    "should_trigger": true,
+    "category": "explicit_slash_command"
+  },
+  {
+    "query": "Can you compress this prompt for me?\n\n```\nYou are a brilliant, world-class AI assistant with deep expertise in customer support. Please carefully read the customer's message and, taking a deep breath and thinking step by step, kindly classify it into one of these categories: billing, technical, account, or other. Please make sure to be accurate. Thank you so much for your help!\n\nCustomer message: {message}\n```",
+    "should_trigger": true,
+    "category": "explicit_compress_with_paste"
+  },
+  {
+    "query": "My LLM bills are getting out of hand. Here's the system prompt I'm running 50k times a day on Claude \u2014 can you help me cut costs without breaking it? [bloated 2000-token prompt would follow]",
+    "should_trigger": true,
+    "category": "cost_complaint_with_paste_intent"
+  },
+  {
+    "query": "I'm hitting context window limits on this RAG pipeline. The retrieved chunks plus the system prompt plus the conversation history is over 100k tokens. What can I trim?",
+    "should_trigger": true,
+    "category": "context_limit_pressure"
+  },
+  {
+    "query": "This few-shot block has 8 examples, do I really need all of them?",
+    "should_trigger": true,
+    "category": "few_shot_review"
+  },
+  {
+    "query": "Tighten this up for me, it feels bloated.\n\n[long prompt paste]",
+    "should_trigger": true,
+    "category": "tighten_verb"
+  },
+  {
+    "query": "How do I reduce the number of tokens in this Claude prompt without breaking the output quality?",
+    "should_trigger": true,
+    "category": "explicit_reduce_tokens"
+  },
+  {
+    "query": "Can you review my agent system prompt for bloat? It's grown organically and I think there's a lot of fat to cut.",
+    "should_trigger": true,
+    "category": "bloat_review_request"
+  },
+  {
+    "query": "The latency on my LLM endpoint is awful, p95 is 4 seconds. Here's the prompt I'm sending \u2014 can we cut it down?",
+    "should_trigger": true,
+    "category": "latency_complaint_with_paste_intent"
+  },
+  {
+    "query": "I'm using GPT-4o for a classification task and it's costing me $400/day. Here's the prompt \u2014 what would you change?",
+    "should_trigger": true,
+    "category": "cost_with_specific_workload"
+  },
+  {
+    "query": "Honest review of my agent system prompt:\n\n```\n[3000-token prompt with role flattery, redundant rules, 8 examples, verbose tool descriptions]\n```\n\nWhat do you think?",
+    "should_trigger": true,
+    "category": "implicit_review_via_substantial_paste"
+  },
+  {
+    "query": "I want to shorten this RAG context window while keeping answer correctness. Here's a sample retrieved-chunks bundle and the user query format.",
+    "should_trigger": true,
+    "category": "rag_specific_compression"
+  },
+  {
+    "query": "Optimize this prompt for production deployment.\n\n[long prompt]",
+    "should_trigger": true,
+    "category": "production_optimize_request"
+  },
+  {
+    "query": "Write me a haiku about autumn leaves.",
+    "should_trigger": false,
+    "category": "unrelated_creative"
+  },
+  {
+    "query": "Fix this Python null pointer exception in my code.",
+    "should_trigger": false,
+    "category": "code_debugging"
+  },
+  {
+    "query": "Optimize this SQL query for speed:\n\nSELECT * FROM orders WHERE customer_id IN (SELECT id FROM customers WHERE region = 'APAC')",
+    "should_trigger": false,
+    "category": "sql_optimization_lookalike"
+  },
+  {
+    "query": "Explain how transformer attention works at a high level.",
+    "should_trigger": false,
+    "category": "ml_theory"
+  },
+  {
+    "query": "Which LLM should I use for a code generation task \u2014 Claude, GPT-4, or Gemini?",
+    "should_trigger": false,
+    "category": "model_selection"
+  },
+  {
+    "query": "How do I lower my AWS bill? My EC2 spend is way too high.",
+    "should_trigger": false,
+    "category": "cloud_infra_cost_lookalike"
+  },
+  {
+    "query": "What is prompt engineering and why does it matter?",
+    "should_trigger": false,
+    "category": "conceptual_question"
+  }
+]

@@ -1,25 +1,22 @@
-{
-  "_comment": "Trigger eval for interviewing skill. 10 should-trigger + 10 should-not-trigger = 20 cases. Mix of candidate-side and interviewer-side queries; debrief queries; and tactical mid-loop questions. Negatives test the description's explicit exclusions: theoretical hiring questions, generic interview tips with no real situation, non-employment interviews (journalistic, exit), and adjacent asks (offer-comp negotiation, decision-between-finalists).",
-  "evals": [
-    {"query": "/interviewing", "should_trigger": true, "category": "explicit_slash_command"},
-    {"query": "I have a screen Tuesday for a senior data eng role at a series-B fintech. need to prep — what's the smart use of the next 48 hours?", "should_trigger": true, "category": "candidate_screen_prep"},
-    {"query": "we're hiring our first ML engineer and I'm running the loop. what's a sane interview structure?", "should_trigger": true, "category": "interviewer_design_first_hire"},
-    {"query": "the loop went weirdly today and I can't tell if the candidate was strong or I'm just confused. help me debrief", "should_trigger": true, "category": "interviewer_debrief_unclear_signal"},
-    {"query": "they just asked me 'tell me about a time you disagreed with your manager' and my mind went blank. I have 15 mins before the next round, what do I do?", "should_trigger": true, "category": "candidate_tactical_mid_loop"},
-    {"query": "panel debrief tomorrow morning, three of us interviewed the same candidate. how do I run it so we don't just rubber-stamp the loudest opinion?", "should_trigger": true, "category": "interviewer_debrief_protocol"},
-    {"query": "I bombed a behavioral question yesterday — 'tell me about a failure'. how do I rebuild the answer for the next round on Friday?", "should_trigger": true, "category": "candidate_specific_question_rebuild"},
-    {"query": "interviewing for a role in Tokyo as an American. what should I calibrate?", "should_trigger": true, "category": "candidate_cross_cultural"},
-    {"query": "I'm a hiring manager and I keep accidentally hiring people who feel familiar to me. how do I structure my next loop to fix that?", "should_trigger": true, "category": "interviewer_bias_aware_redesign"},
-    {"query": "got rejected after the final round at the place I really wanted. trying to figure out what to learn before my next loop next month", "should_trigger": true, "category": "candidate_post_rejection_debrief"},
-    {"query": "what does research say about whether interviews predict job performance?", "should_trigger": false, "category": "academic_hiring_science"},
-    {"query": "give me some general interview tips", "should_trigger": false, "category": "generic_tips_no_context"},
-    {"query": "I'm being interviewed by a journalist next week about my career, how do I prep?", "should_trigger": false, "category": "non_employment_interview"},
-    {"query": "I'm leaving my company. how do I prep for the exit interview HR scheduled?", "should_trigger": false, "category": "exit_interview"},
-    {"query": "I got the offer, now how do I negotiate the comp?", "should_trigger": false, "category": "post_offer_negotiation_different_skill"},
-    {"query": "we have two finalists and the panel is split. help me decide who to hire.", "should_trigger": false, "category": "decision_between_finalists_decide_territory"},
-    {"query": "what's the difference between behavioral and situational interview questions?", "should_trigger": false, "category": "concept_definition"},
-    {"query": "is it true that interviews are mostly first-impression bias?", "should_trigger": false, "category": "theoretical_truthiness"},
-    {"query": "draft me a sample STAR story I can use as a template", "should_trigger": false, "category": "template_request_no_real_situation"},
-    {"query": "review my resume for a senior PM role", "should_trigger": false, "category": "resume_review_not_interview"}
-  ]
-}
+[
+  {"query": "/interviewing", "should_trigger": true, "category": "explicit_slash_command"},
+  {"query": "I have a screen Tuesday for a senior data eng role at a series-B fintech. need to prep — what's the smart use of the next 48 hours?", "should_trigger": true, "category": "candidate_screen_prep"},
+  {"query": "we're hiring our first ML engineer and I'm running the loop. what's a sane interview structure?", "should_trigger": true, "category": "interviewer_design_first_hire"},
+  {"query": "the loop went weirdly today and I can't tell if the candidate was strong or I'm just confused. help me debrief", "should_trigger": true, "category": "interviewer_debrief_unclear_signal"},
+  {"query": "they just asked me 'tell me about a time you disagreed with your manager' and my mind went blank. I have 15 mins before the next round, what do I do?", "should_trigger": true, "category": "candidate_tactical_mid_loop"},
+  {"query": "panel debrief tomorrow morning, three of us interviewed the same candidate. how do I run it so we don't just rubber-stamp the loudest opinion?", "should_trigger": true, "category": "interviewer_debrief_protocol"},
+  {"query": "I bombed a behavioral question yesterday — 'tell me about a failure'. how do I rebuild the answer for the next round on Friday?", "should_trigger": true, "category": "candidate_specific_question_rebuild"},
+  {"query": "interviewing for a role in Tokyo as an American. what should I calibrate?", "should_trigger": true, "category": "candidate_cross_cultural"},
+  {"query": "I'm a hiring manager and I keep accidentally hiring people who feel familiar to me. how do I structure my next loop to fix that?", "should_trigger": true, "category": "interviewer_bias_aware_redesign"},
+  {"query": "got rejected after the final round at the place I really wanted. trying to figure out what to learn before my next loop next month", "should_trigger": true, "category": "candidate_post_rejection_debrief"},
+  {"query": "what does research say about whether interviews predict job performance?", "should_trigger": false, "category": "academic_hiring_science"},
+  {"query": "give me some general interview tips", "should_trigger": false, "category": "generic_tips_no_context"},
+  {"query": "I'm being interviewed by a journalist next week about my career, how do I prep?", "should_trigger": false, "category": "non_employment_interview"},
+  {"query": "I'm leaving my company. how do I prep for the exit interview HR scheduled?", "should_trigger": false, "category": "exit_interview"},
+  {"query": "I got the offer, now how do I negotiate the comp?", "should_trigger": false, "category": "post_offer_negotiation_different_skill"},
+  {"query": "we have two finalists and the panel is split. help me decide who to hire.", "should_trigger": false, "category": "decision_between_finalists_decide_territory"},
+  {"query": "what's the difference between behavioral and situational interview questions?", "should_trigger": false, "category": "concept_definition"},
+  {"query": "is it true that interviews are mostly first-impression bias?", "should_trigger": false, "category": "theoretical_truthiness"},
+  {"query": "draft me a sample STAR story I can use as a template", "should_trigger": false, "category": "template_request_no_real_situation"},
+  {"query": "review my resume for a senior PM role", "should_trigger": false, "category": "resume_review_not_interview"}
+]

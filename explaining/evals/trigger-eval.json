@@ -1,25 +1,102 @@
-{
-  "_comment": "Trigger eval for explaining skill. 10 should-trigger + 10 should-not-trigger = 20 cases. Skill gives the answer plus reasoning plus a pattern-recognition cue. Negative cases include how-to/procedural (different shape), simple lookups (no reasoning needed), and /working-through requests (user wants to derive the answer themselves).",
-  "evals": [
-    {"query": "/explaining", "should_trigger": true, "category": "explicit_slash_command"},
-    {"query": "why does the CAP theorem matter in real-world distributed systems?", "should_trigger": true, "category": "concept_with_real_world_relevance"},
-    {"query": "explain to me why N+1 query problems are so common in ORM-based code, and how to spot them", "should_trigger": true, "category": "explain_pattern_with_recognition"},
-    {"query": "I keep getting confused about when to use covariance vs correlation. can you help me actually understand the difference and when each one matters?", "should_trigger": true, "category": "concept_clarification_with_application"},
-    {"query": "why is the dollar so dominant as a reserve currency? I want to actually understand the mechanism, not just the slogan", "should_trigger": true, "category": "explain_underlying_mechanism"},
-    {"query": "help me understand why startup valuations bounce between 'frothy' and 'depressed' on roughly seven-year cycles. what's actually driving that?", "should_trigger": true, "category": "explain_pattern_with_drivers"},
-    {"query": "explain how futures contracts work — I want to understand them well enough to recognize when one is mispriced", "should_trigger": true, "category": "explain_well_enough_to_recognize"},
-    {"query": "I keep forgetting why we use cross-validation. give me the explanation that'll actually stick this time", "should_trigger": true, "category": "explain_with_retention_intent"},
-    {"query": "why do most companies adopt microservices and then quietly walk it back two years later? what's the underlying dynamic?", "should_trigger": true, "category": "explain_pattern_underlying_dynamic"},
-    {"query": "explain why the chess world ended up with two competing rating systems (Elo vs FIDE adjustments) and what that tells us about scoring problems in general", "should_trigger": true, "category": "explain_with_generalization_cue"},
-    {"query": "how do I run a Postgres backup from the command line?", "should_trigger": false, "category": "how_to_procedural"},
-    {"query": "what's the capital of Estonia?", "should_trigger": false, "category": "simple_factual_lookup"},
-    {"query": "I want to figure this out myself — give me a framework but don't tell me the answer", "should_trigger": false, "category": "working_through_request"},
-    {"query": "summarize the latest paper on transformers in three bullets", "should_trigger": false, "category": "summarization_task"},
-    {"query": "fix this Python error: ModuleNotFoundError: No module named 'pandas'", "should_trigger": false, "category": "debugging_help"},
-    {"query": "translate this French paragraph to English", "should_trigger": false, "category": "translation_task"},
-    {"query": "what's 17% of 348?", "should_trigger": false, "category": "calculation"},
-    {"query": "draft an email to my manager about taking next Friday off", "should_trigger": false, "category": "writing_task"},
-    {"query": "I just read about the Coase theorem. is it really that important or is it overrated?", "should_trigger": false, "category": "opinion_request"},
-    {"query": "give me a one-sentence definition of entropy", "should_trigger": false, "category": "definition_only_no_reasoning"}
-  ]
-}
+[
+  {
+    "query": "/explaining",
+    "should_trigger": true,
+    "category": "explicit_slash_command"
+  },
+  {
+    "query": "why does the CAP theorem matter in real-world distributed systems?",
+    "should_trigger": true,
+    "category": "concept_with_real_world_relevance"
+  },
+  {
+    "query": "explain to me why N+1 query problems are so common in ORM-based code, and how to spot them",
+    "should_trigger": true,
+    "category": "explain_pattern_with_recognition"
+  },
+  {
+    "query": "I keep getting confused about when to use covariance vs correlation. can you help me actually understand the difference and when each one matters?",
+    "should_trigger": true,
+    "category": "concept_clarification_with_application"
+  },
+  {
+    "query": "why is the dollar so dominant as a reserve currency? I want to actually understand the mechanism, not just the slogan",
+    "should_trigger": true,
+    "category": "explain_underlying_mechanism"
+  },
+  {
+    "query": "help me understand why startup valuations bounce between 'frothy' and 'depressed' on roughly seven-year cycles. what's actually driving that?",
+    "should_trigger": true,
+    "category": "explain_pattern_with_drivers"
+  },
+  {
+    "query": "explain how futures contracts work \u2014 I want to understand them well enough to recognize when one is mispriced",
+    "should_trigger": true,
+    "category": "explain_well_enough_to_recognize"
+  },
+  {
+    "query": "I keep forgetting why we use cross-validation. give me the explanation that'll actually stick this time",
+    "should_trigger": true,
+    "category": "explain_with_retention_intent"
+  },
+  {
+    "query": "why do most companies adopt microservices and then quietly walk it back two years later? what's the underlying dynamic?",
+    "should_trigger": true,
+    "category": "explain_pattern_underlying_dynamic"
+  },
+  {
+    "query": "explain why the chess world ended up with two competing rating systems (Elo vs FIDE adjustments) and what that tells us about scoring problems in general",
+    "should_trigger": true,
+    "category": "explain_with_generalization_cue"
+  },
+  {
+    "query": "how do I run a Postgres backup from the command line?",
+    "should_trigger": false,
+    "category": "how_to_procedural"
+  },
+  {
+    "query": "what's the capital of Estonia?",
+    "should_trigger": false,
+    "category": "simple_factual_lookup"
+  },
+  {
+    "query": "I want to figure this out myself \u2014 give me a framework but don't tell me the answer",
+    "should_trigger": false,
+    "category": "working_through_request"
+  },
+  {
+    "query": "summarize the latest paper on transformers in three bullets",
+    "should_trigger": false,
+    "category": "summarization_task"
+  },
+  {
+    "query": "fix this Python error: ModuleNotFoundError: No module named 'pandas'",
+    "should_trigger": false,
+    "category": "debugging_help"
+  },
+  {
+    "query": "translate this French paragraph to English",
+    "should_trigger": false,
+    "category": "translation_task"
+  },
+  {
+    "query": "what's 17% of 348?",
+    "should_trigger": false,
+    "category": "calculation"
+  },
+  {
+    "query": "draft an email to my manager about taking next Friday off",
+    "should_trigger": false,
+    "category": "writing_task"
+  },
+  {
+    "query": "I just read about the Coase theorem. is it really that important or is it overrated?",
+    "should_trigger": false,
+    "category": "opinion_request"
+  },
+  {
+    "query": "give me a one-sentence definition of entropy",
+    "should_trigger": false,
+    "category": "definition_only_no_reasoning"
+  }
+]
