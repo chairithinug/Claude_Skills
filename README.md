@@ -31,6 +31,7 @@ Claude_Skills/
 | [`fortune-telling/`](fortune-telling/) | `/fortune-telling` | Multi-tradition divination (Thai day-of-week, Chinese BaZi, Vedic, Western, Japanese Rokuyō). Picks one primary tradition + at most one cross-check; gives a verdict, not a lecture. For entertainment. |
 | [`negotiating/`](negotiating/) | `/negotiating` | Structured negotiation prep — interests, BATNA, cognitive traps, opening and concession architecture, pre-mortem. Also auto-fires on real upcoming negotiations (salary, vendor, partnership, fundraise). |
 | [`quick-answering/`](quick-answering/) | `/quick-answering` | Fast minimal answer. No frameworks, no scaffolding, no caveats unless load-bearing. |
+| [`researching-topics/`](researching-topics/) | `/researching-topics` | Conducts substantive topic research via a six-step methodology (frame → map → plan sources → execute → synthesize → verify). Three modes (quick-scan, deep-dive, compare-options); layered output with TL;DR, confidence-labeled findings, steel-manned competing views, open questions, and sources. |
 | [`thai-dish-picking/`](thai-dish-picking/) | `/thai-dish-picking` | Suggests 3 varied Thai dishes when the user can't decide what to eat. Spans regions and categories deliberately, avoids the famous-20 autopilot, searches bilingually for less-obvious dishes. |
 | [`token-optimizing/`](token-optimizing/) | `/token-optimizing` | Compresses prompts, RAG context, few-shot blocks, and agent loops without losing load-bearing content. Triages cache → batch → route → bound → compress → rewrite before touching the prompt. Ships with worked example, trigger eval (20 cases), and quality eval (8 cases). |
 | [`working-through/`](working-through/) | `/working-through` | Coaches the user to the answer instead of giving it — provides the framework, asks them to apply it, reacts to their attempt. |
@@ -86,6 +87,12 @@ A short read on what each skill is good at, where it falls down, where it could 
 - **Weakness** — loses to mode conflicts when other skills want to add structure; can hide nuance on genuinely complex questions.
 - **Opportunity** — strong companion to verbose skills — chained as a "now compress that" follow-up after a long output.
 - **Threat** — misapplication on ambiguous questions risks confidently-wrong short answers; skill must flag ambiguity rather than guess.
+
+### `researching-topics`
+- **Strength** — forced six-step methodology with three modes; layered output explicitly separates fact from inference and labels each finding with a confidence level; steel-mans competing views rather than balancing them.
+- **Weakness** — methodology overhead is wasted on simple lookups; user has to recognize when their question warrants the full treatment vs. a direct answer (the description's negative-trigger list helps but isn't perfect).
+- **Opportunity** — could ship reference files for domain-specific source plans (financial, technical, regulatory, scientific); could chain with `/deciding` when the research feeds a decision; could add per-mode trigger evals.
+- **Threat** — confidence labels are only as honest as Claude's calibration; over-confident "high confidence" labels on weakly-sourced findings would defeat the skill's main value proposition.
 
 ### `thai-dish-picking`
 - **Strength** — bilingual search guidance (Thai + English) and explicit autopilot-avoidance rules; three worked examples baked in for diversity, full agency, and constrained modes.
