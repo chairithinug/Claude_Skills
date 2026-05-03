@@ -54,6 +54,11 @@ coverage/
 .pytest_cache/
 .mypy_cache/
 
+# Trigger-eval loop raw outputs (HTML reports, JSON dumps, candidate descriptions).
+# Per-skill summary lives in <skill>/evals/loop-results.md and IS committed.
+# Raw outputs are large and reproducible from the eval set, so they don't track.
+*/evals/loops/
+
 # OS-specific
 Thumbs.db
 Desktop.ini

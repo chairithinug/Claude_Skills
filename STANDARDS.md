@@ -284,6 +284,25 @@ Quality evals are **optional for subjective skills** — reasoning, coaching, pe
 
 `_template/evals.md` provides the scaffold for step 2.
 
+### Persisting loop results
+
+When you run skill-creator's `run_loop.py` against a skill's trigger eval, save a lightweight summary to `<skill>/evals/loop-results.md`. The summary captures:
+
+- Date and model used
+- Baseline vs. iterated train/test scores
+- The best description suggested by the loop
+- Your decision (accepted / rejected / modified) and a one-line reason
+- Any patterns worth noting (which negatives consistently fired, which positives consistently missed)
+
+`_template/loop-results.md` is the scaffold.
+
+Raw run-loop output (HTML reports, full JSON dumps, candidate-description history) lives in `<skill>/evals/loops/<date>/` and is **gitignored** — large, reproducible from the eval set, and not worth bloating the repo. The committed summary file is what future-you will actually read.
+
+Re-run the loop when:
+- The description has been substantively changed
+- A major model update lands (loop scores can drift on the same description as Claude evolves)
+- The eval set is expanded or rebalanced
+
 ---
 
 ## 11. Post-creation handoff (this repo's convention)
