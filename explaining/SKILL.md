@@ -53,6 +53,10 @@ exclusive — ask the user which mode they want before proceeding. If
 `/working-through` is not in the available skills list, treat the request as
 `/explaining` directly without asking.
 
+## Reference files
+
+- [`evals/trigger-eval.json`](evals/trigger-eval.json) — 20 trigger test cases (10 should-fire, 10 should-not-fire). Negatives include how-to/procedural questions, simple factual lookups, calculation tasks, and `/working-through` requests where the user wants to derive the answer themselves rather than receive it with reasoning.
+
 ## Worked example
 
 **User**: "Why does the CAP theorem matter?"

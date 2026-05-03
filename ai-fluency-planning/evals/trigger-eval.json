@@ -1,0 +1,25 @@
+{
+  "_comment": "Trigger eval for ai-fluency-planning skill. 10 should-trigger + 10 should-not-trigger = 20 cases. Negative cases are near-misses: in-progress task help, single-step requests, framework theory questions, and other planning-adjacent asks that don't warrant the full 4D interview.",
+  "evals": [
+    {"query": "/ai-fluency-planning", "should_trigger": true, "category": "explicit_slash_command"},
+    {"query": "I'm about to start a board update for Q4. Help me set up how to use Claude for this — I want a real plan before I dive in.", "should_trigger": true, "category": "project_kickoff_explicit_planning"},
+    {"query": "let's plan this out before we start. I want to write a 30-page research synthesis on AI agent benchmarks and I need a brief I can refer back to", "should_trigger": true, "category": "before_starting_explicit_brief"},
+    {"query": "help me figure out how to use Claude for writing my company's internal style guide. lots of stakeholders, lots of opinions, want to do this right", "should_trigger": true, "category": "use_claude_for_complex_project"},
+    {"query": "set up an AI brief for the migration runbook I'm about to draft. I want delegation, prompt templates, all of it", "should_trigger": true, "category": "explicit_brief_request"},
+    {"query": "I have a multi-step writing project starting Monday. how should I approach it with AI assistance so I'm not just winging it?", "should_trigger": true, "category": "multi_step_project_pre_execution"},
+    {"query": "want to be more deliberate about how I work with claude on this. it's a 3-week effort, lots of moving parts. let's plan", "should_trigger": true, "category": "deliberate_collaboration_setup"},
+    {"query": "preparing to write a research paper. I need to think about what I delegate to AI, what stays mine, what good looks like, and how I'll verify before publishing", "should_trigger": true, "category": "explicit_4D_dimensions"},
+    {"query": "ok new project. before I start asking Claude to write things, let's set up the rules of engagement", "should_trigger": true, "category": "rules_of_engagement_setup"},
+    {"query": "I want to write a good prompt for this project but I keep going in circles. can we structure this properly?", "should_trigger": true, "category": "prompt_engineering_via_planning"},
+    {"query": "I'm halfway through this draft and the output is drifting from what I wanted. how do I get back on track?", "should_trigger": false, "category": "in_progress_correction_not_planning"},
+    {"query": "what's the AI Fluency 4D framework? I keep seeing it referenced but I don't know what the four Ds stand for", "should_trigger": false, "category": "framework_theory_question"},
+    {"query": "summarize this email for me", "should_trigger": false, "category": "single_step_simple_request"},
+    {"query": "write me a Python script that downloads PDFs from a list of URLs", "should_trigger": false, "category": "single_step_code_task"},
+    {"query": "I want to be better at delegating in general at work. any frameworks?", "should_trigger": false, "category": "human_delegation_not_AI"},
+    {"query": "review this draft of my Q3 retrospective and tell me what's weak", "should_trigger": false, "category": "review_existing_content"},
+    {"query": "help me decide whether to use Claude or GPT-4 for this project", "should_trigger": false, "category": "model_selection_not_planning"},
+    {"query": "I just used Claude for the first time and it was great. what should I try next?", "should_trigger": false, "category": "casual_exploration_no_project"},
+    {"query": "what does 'discernment' mean in the AI Fluency framework? I see it in your description but it's not obvious", "should_trigger": false, "category": "definition_question"},
+    {"query": "should I use AI for this project at all, or just do it the old-fashioned way?", "should_trigger": false, "category": "decide_whether_to_use_ai_decide_territory"}
+  ]
+}

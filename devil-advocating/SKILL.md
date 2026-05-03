@@ -55,6 +55,10 @@ is the point — the user is stress-testing, not seeking validation.
 standalone and mention to the user that decision-framework prep would
 normally precede it.
 
+## Reference files
+
+- [`evals/trigger-eval.json`](evals/trigger-eval.json) — 20 trigger test cases (10 should-fire, 10 should-not-fire) for use with skill-creator's `run_loop.py`. Negatives test the line between "red-team my own position" (fires) and "give me a balanced view" / "argue this for a debate class" / "I don't have a position yet" (doesn't fire). The skill produces one-sided opposition — balanced critique is a different ask.
+
 ## Worked example
 
 **User**: "I think we should adopt microservices for our 10-person team."

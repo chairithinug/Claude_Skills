@@ -1,0 +1,25 @@
+{
+  "_comment": "Trigger eval for negotiating skill. 10 should-trigger + 10 should-not-trigger = 20 cases. The skill description is already strong on this — it has explicit positive AND negative trigger guidance. The negative cases here test the boundary between real upcoming negotiations (fires) and theoretical questions / fictional scenarios / past-tense debriefs (doesn't fire).",
+  "evals": [
+    {"query": "/negotiating", "should_trigger": true, "category": "explicit_slash_command"},
+    {"query": "I have a salary call with my prospective employer Thursday. base they offered is 180k, I want 200k. help me prep.", "should_trigger": true, "category": "salary_call_explicit_prep"},
+    {"query": "vendor wants to renew at +30%. how do I push back without losing them?", "should_trigger": true, "category": "vendor_renewal_real"},
+    {"query": "thinking about asking for equity in my next round. anyone want to think this through with me?", "should_trigger": true, "category": "equity_ask_processing"},
+    {"query": "we're in talks to sell the company. partner wants to take the first offer, I think we should push. help me prep my counterargument and the negotiation strategy", "should_trigger": true, "category": "acquisition_negotiation_real"},
+    {"query": "potential client wants a 40% discount on our standard rate. what's my play here?", "should_trigger": true, "category": "client_pricing_negotiation"},
+    {"query": "got an offer letter back, base is fine but the equity structure is weird. need to think through how to negotiate it", "should_trigger": true, "category": "offer_letter_terms"},
+    {"query": "ex-employee is asking for severance more than what we typically offer. it's getting heated. help me think through this", "should_trigger": true, "category": "severance_negotiation"},
+    {"query": "buying a house. agent says the seller won't budge but the inspection found three things. how do I work this?", "should_trigger": true, "category": "house_buying_post_inspection"},
+    {"query": "my landlord is raising rent 25%. I want to negotiate but I've never done this. what's my opening move?", "should_trigger": true, "category": "rent_negotiation_first_time"},
+    {"query": "what are the most common cognitive biases in negotiation?", "should_trigger": false, "category": "negotiation_theory_question"},
+    {"query": "explain BATNA to me — I keep seeing it referenced", "should_trigger": false, "category": "concept_definition_question"},
+    {"query": "I just finished a salary negotiation last month and I left money on the table. how do I get over it?", "should_trigger": false, "category": "past_tense_emotional_processing"},
+    {"query": "I'm writing a screenplay where the main character has to negotiate a hostage release. what would feel realistic?", "should_trigger": false, "category": "fictional_scenario_writing"},
+    {"query": "what does game theory say about ultimatum games?", "should_trigger": false, "category": "academic_game_theory"},
+    {"query": "is it true that anchoring is the most important negotiation tactic?", "should_trigger": false, "category": "theoretical_truthiness"},
+    {"query": "I had a fight with my partner about household chores. how do I have a productive conversation?", "should_trigger": false, "category": "interpersonal_communication_not_negotiation"},
+    {"query": "explain the difference between distributive and integrative negotiation", "should_trigger": false, "category": "concept_explanation_request"},
+    {"query": "in a hypothetical scenario where two countries are negotiating a trade deal, what factors matter most?", "should_trigger": false, "category": "hypothetical_no_user_skin_in_game"},
+    {"query": "should I read 'Never Split the Difference' or 'Getting to Yes' first?", "should_trigger": false, "category": "book_recommendation_request"}
+  ]
+}

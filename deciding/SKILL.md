@@ -66,6 +66,11 @@ more certain before choosing it.
 and tell the user that running it through a red-team pass would normally be
 the next step, but that sibling skill is missing.
 
+## Reference files
+
+- [`references/framework.md`](references/framework.md) — Detailed step-by-step guidance for the six-step decision framework. Loaded when extra depth on a specific step is needed.
+- [`evals/trigger-eval.json`](evals/trigger-eval.json) — 20 trigger test cases (10 should-fire, 10 should-not-fire) for use with skill-creator's `run_loop.py`. Negatives include factual lookups, post-decision asks, preference questions without commitment, and other decision-adjacent queries that don't need the framework.
+
 ## Worked example
 
 **User**: "I'm trying to decide whether to leave my engineering job to go independent."

@@ -57,6 +57,10 @@ exclusive — ask the user which mode they want before proceeding. If
 `/explaining` is not in the available skills list, treat the request as
 `/working-through` directly without asking.
 
+## Reference files
+
+- [`evals/trigger-eval.json`](evals/trigger-eval.json) — 20 trigger test cases (10 should-fire, 10 should-not-fire). Negatives test the boundary against `/explaining` (give me the answer with reasoning), against just-give-me-the-answer asks, and against time-pressed work where coaching would frustrate.
+
 ## Worked example
 
 **User**: "Help me figure out why my unit tests are flaky."

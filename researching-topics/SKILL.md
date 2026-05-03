@@ -216,6 +216,10 @@ For **serial research within the same conversation** (the user asks several rela
 
 ---
 
+## Reference files
+
+- [`evals/trigger-eval.json`](evals/trigger-eval.json) — 20 trigger test cases (10 should-fire, 10 should-not-fire). Negatives include simple factual lookups, how-to procedural questions, code debugging, single-claim verification, opinion requests, and other research-adjacent queries that don't need the methodology overhead.
+
 ## Worked example (excerpt)
 
 **User**: "Research whether GraphQL is still worth adopting in 2026 for new projects."

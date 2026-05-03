@@ -132,6 +132,39 @@ Add a fifth section only when warranted:
 
 - **Examples** — when output quality depends on seeing input/output pairs (e.g., commit message style).
 - **Reference pointers** — for skills with `references/`, list the topics with one-line "load when…" descriptions.
+- **Anti-patterns** — distinct from edge cases. Edge cases handle unusual inputs *while* running the skill; anti-patterns name behaviors the skill should refuse or flag (e.g., compressing safety-critical content, fabricating data the skill can't verify). Use when there's a clear set of "don't do this even if asked" items worth listing separately.
+
+### Long-skill variant — top-level `## Step N — Title` headings
+
+The `## Steps / Workflow` wrapper above is the default for skills where the workflow fits naturally as a numbered list of short steps. For skills with substantial multi-step workflows — typically 5+ distinct steps where each step needs its own paragraphs, tables, sub-bullets, or code — the long-skill variant uses top-level h2 headings per step instead of a wrapper:
+
+```markdown
+# <Title> — <Tagline>
+
+<Lead paragraph.>
+
+## When to use this
+- <…>
+
+## Step 0 — <Title of preflight or triage step>
+<Substantial content for this step.>
+
+## Step 1 — <Title of next step>
+<Substantial content.>
+
+## Step 2 — <…>
+<…>
+
+## Output format
+<…>
+
+## Edge cases
+<…>
+```
+
+Both patterns are canonical; pick by the shape of the workflow, not by preference. The rest of the canonical structure (When to use this, Output format, Edge cases, optional Examples / Reference files / Anti-patterns) applies in both variants.
+
+When in doubt, default to the wrapper. Skills that grew into the long variant: `token-optimizing`, `researching-topics`, `ai-fluency-planning` — all over 200 lines with formal multi-step methodology where each step has its own sub-structure.
 
 Length cap: **500 lines for `SKILL.md`**. If you cross it, split into reference files (see §7).
 

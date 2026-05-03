@@ -223,6 +223,10 @@ Keep it short. The brief does the heavy lifting. No sycophantic opener, no trail
 
 ---
 
+## Reference files
+
+- [`evals/trigger-eval.json`](evals/trigger-eval.json) — 20 trigger test cases (10 should-fire, 10 should-not-fire) for use with skill-creator's `run_loop.py`. Negatives are near-misses: in-progress task help, framework theory questions, model selection, and other planning-adjacent asks that don't warrant the full 4D interview.
+
 ## Worked example (excerpt)
 
 **User**: "I want to plan how to use Claude for writing a Q4 board update."

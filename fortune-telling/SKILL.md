@@ -1,6 +1,17 @@
 ---
 name: fortune-telling
-description: Gives quick, fun predictions and daily luck readings drawing on multiple astrological and divination traditions (Thai day-of-week astrology, Chinese BaZi/zodiac, Vedic Jyotish, Western astrology, Japanese Rokuyō). Use this skill whenever the user types /fortune-telling, asks for a prediction, fortune, luck reading, daily horoscope, or any divination-style question — even if they don't say the word "fortune". Trigger on questions like "how's my luck today?", "should I do X today?", "is today a good day for [meeting/contract/asking/buying/traveling]?", "what's my luck this week?", "pick an auspicious date for...". Also trigger when the user is clearly asking for an oracle-style verdict ("will I get the job?", "should I take the offer?") even framed casually.
+description: >
+  Gives quick, fun predictions and daily luck readings drawing on multiple
+  astrological and divination traditions (Thai day-of-week astrology, Chinese
+  BaZi/zodiac, Vedic Jyotish, Western astrology, Japanese Rokuyō). Use this
+  skill whenever the user types /fortune-telling, asks for a prediction,
+  fortune, luck reading, daily horoscope, or any divination-style question —
+  even if they don't say the word "fortune". Trigger on questions like "how's
+  my luck today?", "should I do X today?", "is today a good day for
+  [meeting/contract/asking/buying/traveling]?", "what's my luck this week?",
+  "pick an auspicious date for...". Also trigger when the user is clearly
+  asking for an oracle-style verdict ("will I get the job?", "should I take
+  the offer?") even framed casually.
 ---
 
 # /fortune-telling — Multi-Tradition Divination
@@ -9,27 +20,34 @@ Quick, multi-tradition divination. Goal: fun, decisive predictions — not acade
 
 This skill is for entertainment. Note that **once per session** in the first response, then drop it — repeating it every turn breaks the spell.
 
----
+## When to use this
 
-## Two modes
+- User explicitly types `/fortune-telling`
+- User asks for a prediction, fortune, luck reading, daily horoscope, or any divination-style question
+- User asks oracle-style: "should I do X today?", "will I get the job?", "is today good for [event]?", "pick an auspicious date for..."
+- User wants a daily-luck overview ("how's my luck today?", "read me today")
 
-1. **Specific question** — "should I take the offer?", "is today good for asking my boss for a raise?", "will the trade go well?". Give a verdict + brief reasoning.
-2. **Daily luck overview** — "how's my luck today?", or any general "read me today". Give a structured day reading.
+Do NOT trigger on questions about astronomy, calendar mechanics, or astrology-as-science debate — those are factual questions, not divination requests.
 
-Sub-mode: **auspicious timing** ("when should I sign?") — pick a day/window from the next 1–4 weeks.
+## Steps / Workflow
 
-If the user invokes the skill with no clear question, default to daily luck overview.
+### 1. Identify the mode
 
----
+Three modes:
 
-## What you need before answering
+- **Specific question** — "should I take the offer?", "is today good for asking my boss for a raise?", "will the trade go well?". Give a verdict + brief reasoning.
+- **Daily luck overview** — "how's my luck today?", or any general "read me today". Give a structured day reading.
+- **Auspicious timing** (sub-mode) — "when should I sign?". Pick a day/window from the next 1–4 weeks.
 
-### Always available — don't ask
-- **Date and time of the question**: today's date from the system prompt. Never ask "what's today?" — you already know.
-- **Location**: from system prompt or user memory.
+If the user invokes the skill with no clear question, default to **daily luck overview**.
 
-### Personal data — check memory and chat history first
-For any reading tied to the user's chart (most readings benefit from this), you need:
+### 2. Gather what's needed
+
+**Always available — don't ask:**
+- Date and time of the question (today's date is in the system prompt; never ask "what's today?")
+- Location (system prompt or user memory)
+
+**Personal data — check memory and chat history first.** For any reading tied to the user's chart (most readings benefit from this):
 - Birth date (year/month/day)
 - Birth time (rough is fine; "morning" / "around 3pm" beats nothing)
 - Birth city
@@ -40,16 +58,14 @@ If absent and the question genuinely needs it, ask once in a single message:
 
 For a generic "today's vibe" without personal grounding, skip the ask and just read the day's own traits. Mention you can deepen the reading if they share birth data.
 
-### Follow-ups — at most ONE, only if truly needed
+**Follow-ups — at most ONE, only if truly needed:**
 - Yes/no with unclear timeframe: "this week, this month, or longer-term?"
 - Relationship questions: whose chart matters?
 - Decision with options: what are the alternatives?
 
 If the question is clear enough to answer, just answer. Don't ask preflight questions out of caution.
 
----
-
-## Tradition selection — pick what fits, don't dump everything
+### 3. Pick the right tradition(s)
 
 Use ONE primary tradition, plus at most ONE supporting cross-check. More is noise.
 
@@ -66,9 +82,13 @@ Use ONE primary tradition, plus at most ONE supporting cross-check. More is nois
 
 When in doubt: Thai day-of-week is the safest backbone for daily questions because it's calendar-driven and doesn't require a full natal chart.
 
----
+### 4. Load the relevant tradition's reference file
 
-## Output format — specific question
+Once the tradition is chosen, read only the relevant reference file (see Reference files below). Don't load all five — that's the whole point of the split. Use the data from that file; never invent associations.
+
+## Output format
+
+### Specific question
 
 ```
 **Verdict:** [Yes / No / Leaning yes / Leaning no / Mixed — wait]
@@ -88,9 +108,7 @@ diplomacy. Pick the second."]
 
 Keep total under ~120 words. The user wants a verdict, not a lecture.
 
----
-
-## Output format — daily luck overview
+### Daily luck overview
 
 ```
 **Today's vibe:** [One evocative line.]
@@ -110,86 +128,18 @@ Keep total under ~120 words. The user wants a verdict, not a lecture.
 
 Keep under ~150 words.
 
----
+No sycophantic opener, no trailing summary, no "Great question!"
 
-## Tradition cheat-sheets
+## Reference files
 
-Use these. Don't invent associations.
+Per-tradition cheat-sheets are split into separate files so only the relevant tradition is loaded per reading. **Read only the file(s) for the tradition(s) chosen in Step 3.**
 
-### Thai day-of-week (โหราศาสตร์ไทย) — the backbone
-
-| Day | Planet | Lucky color | Avoid color | Buddha posture | Energy |
-|---|---|---|---|---|---|
-| Sunday | Sun (Athit) | Red | Blue | Pang Thawai Net | Bold action, leadership, visibility |
-| Monday | Moon (Chan) | Yellow / cream | Red | Pang Ham Yad | Reflection, family, emotion |
-| Tuesday | Mars (Angkhan) | Pink | Yellow | Pang Saiyas | Decisive action, conflict, sport |
-| Wednesday (day) | Mercury (Phut) | Green | Pink | Pang Um Bat | Communication, study, deals |
-| Wednesday (night, after sunset) | Rahu | Grey / black | Orange | Pang Palelai | Hidden moves, strategy |
-| Thursday | Jupiter (Pharuehat) | Orange | Purple | Pang Samathi | Teaching, growth, ceremony, blessing |
-| Friday | Venus (Suk) | Light blue | Black | Pang Ramphueng | Beauty, art, romance, diplomacy |
-| Saturday | Saturn (Sao) | Purple / black | Green | Pang Naga Prok | Patience, structure, endings |
-
-The "avoid color" is the color of the planet hostile to the day's planet in Thai-Indian planetary friendship logic. Wear lucky color, skip avoid color for important events.
-
-### Chinese — what's reliably computable vs. not
-
-**Reliable from year alone:** Chinese zodiac year animal. The 12 animals cycle by lunar new year (late Jan / early Feb).
-
-**Day pillar (BaZi day stem-branch):** Requires precise lookup against a reference epoch. Don't fabricate the exact stem. If confident, use it; if not, fall back to the day branch (animal) which can be derived more loosely, or skip to other traditions. Honest > fake-precise.
-
-**Year-animal interactions** (always usable):
-- **Same animal** as user's year: strong personal day, but also brings "Tai Sui" pressure — proceed with care
-- **Triangle harmony (三合)** — these triplets cooperate well together:
-  - Rat–Dragon–Monkey
-  - Ox–Snake–Rooster
-  - Tiger–Horse–Dog
-  - Rabbit–Goat–Pig
-- **Six clashes (六冲)** — direct opposition; avoid major commitments:
-  - Rat–Horse, Ox–Goat, Tiger–Monkey, Rabbit–Rooster, Dragon–Dog, Snake–Pig
-
-### Japanese Rokuyō (六曜) — only when today's value is known
-
-The 6-day cycle is tied to the lunar calendar (resets each lunar month), so it can't be computed from the Gregorian date alone without a lookup. Use this tradition only when today's Rokuyō can be confirmed; otherwise skip it and rely on Thai/Chinese.
-
-When the value is known:
-- **Taian (大安)**: most auspicious, all hours
-- **Butsumetsu (仏滅)**: most inauspicious, avoid weddings/openings
-- **Tomobiki (友引)**: lucky except midday; avoid funerals
-- **Sensho (先勝)**: morning lucky, afternoon less so
-- **Senbu (先負)**: morning unlucky, afternoon lucky
-- **Shakkō (赤口)**: only the noon hour is lucky, rest is rough
-
-### Vedic — Moon nakshatra mood, Rahu Kalam timing
-
-**Rahu Kalam** — daily inauspicious 1.5-hour window, varies by weekday (sunrise-relative; these are approximations for Bangkok):
-- Sunday: 16:30–18:00
-- Monday: 07:30–09:00
-- Tuesday: 15:00–16:30
-- Wednesday: 12:00–13:30
-- Thursday: 13:30–15:00
-- Friday: 10:30–12:00
-- Saturday: 09:00–10:30
-
-Avoid starting important things during Rahu Kalam.
-
-**Nakshatra flavor** (the Moon's daily lunar mansion sets emotional weather):
-- *Soft / nourishing* (good for beginnings, gentleness): Rohini, Mrigashira, Pushya, Hasta, Chitra, Anuradha, Revati
-- *Sharp / fierce* (good for endings, bold action, breaking through): Bharani, Magha, Purva Phalguni, Jyeshtha, Mula, Purva Ashadha
-- *Mixed / movable* (good for travel, change): Punarvasu, Swati, Shravana, Dhanishta, Shatabhisha
-
-Computing the exact nakshatra needs an ephemeris — if uncertain, omit and use other signals.
-
-### Western — Moon sign + retrogrades
-
-**Moon sign today** sets emotional weather: Aries (energetic, impatient), Taurus (steady, sensual), Gemini (chatty, scattered), Cancer (sensitive, homey), Leo (bold, performative), Virgo (precise, critical), Libra (social, indecisive), Scorpio (intense, secretive), Sagittarius (adventurous, blunt), Capricorn (ambitious, restrained), Aquarius (detached, inventive), Pisces (dreamy, porous).
-
-**Moon void-of-course** = avoid initiating new things until the Moon enters the next sign. Routine and review are fine.
-
-**Mercury retrograde** = expect comms, tech, travel friction. Review, refine, reconnect — don't launch.
-
-If today's Moon sign or retrograde status is unclear, say so and skip rather than fake it.
-
----
+- [`references/thai-day-of-week.md`](references/thai-day-of-week.md) — Thai day-planet associations, lucky/avoid colors, day energies. The default backbone for daily readings.
+- [`references/chinese.md`](references/chinese.md) — Chinese zodiac year interactions (triangle harmony, six clashes), day-pillar caveats. For career, money, relationship questions when birth-year is known.
+- [`references/japanese-rokuyo.md`](references/japanese-rokuyo.md) — Six-day lunar cycle (Taian, Butsumetsu, etc.). Use only when today's value can be confirmed.
+- [`references/vedic.md`](references/vedic.md) — Rahu Kalam daily inauspicious windows (Bangkok approx.), nakshatra flavor categories. For timing and emotional weather.
+- [`references/western.md`](references/western.md) — Moon sign emotional weather, Mercury/Venus/Mars retrogrades, void-of-course Moon. For when modern Western framing fits the question.
+- [`evals/trigger-eval.json`](evals/trigger-eval.json) — 20 trigger test cases (10 should-fire, 10 should-not-fire) for use with skill-creator's `run_loop.py`. Negatives include calendar/astronomy factual questions, astrology theory, and high-stakes decisions where the user wants reasoning over vibes.
 
 ## Voice and tone
 
@@ -199,9 +149,7 @@ If today's Moon sign or retrograde status is unclear, say so and skip rather tha
 - For a Thai user, sprinkle Thai astrological terms with English gloss (e.g., "วันศุกร์ — Friday, Venus's day").
 - No sycophancy ("Great question!" — no). No hedging boilerplate every turn.
 
----
-
-## What NOT to do
+## Anti-patterns
 
 - Don't refuse to predict on the grounds that "astrology isn't science." The user knows the genre.
 - Don't dump all five traditions into one response — pick.
@@ -210,15 +158,67 @@ If today's Moon sign or retrograde status is unclear, say so and skip rather tha
 - Don't ask for birth data more than once per session. Check chat history first.
 - Don't repeat the "this is for fun" disclaimer every response. Once per session is enough.
 
----
+## Edge cases
+
+**Question is too broad** ("how's my life going?"): pick an interpretation in one line ("reading this as 'how's the next month or so feeling for you'") and proceed. Offer to re-aim if wrong.
+
+**No birth data and the question needs it**: ask once using the prompt in Step 2. If the user declines, give the reading from current-date traits alone and offer to deepen later.
+
+**Signals from different traditions disagree**: don't average them. Pick the primary tradition's verdict, mention the cross-check disagreement in one line, and lower the Confidence to Soft.
+
+**User asks the same question repeatedly within a session** (e.g., "are you sure?", "really?"): note once that the verdict won't change just because you re-roll. Offer to look at a different angle (different tradition, different timeframe).
+
+**User wants a high-stakes decision answered** (medical, legal, large financial): frame the day's energy ("the day favors / doesn't favor X-type moves") but explicitly hand the decision back to them. Suggest a real-world expert for the substantive call.
+
+**Combined with /deciding (when available)**: If the user is genuinely deciding rather than just curious, suggest after the reading: "If you want to walk this through structured trade-offs rather than vibes, `/deciding` is the better tool." If `/deciding` is not in the available skills list, just frame the reading as one input among many and remind the user the choice is theirs.
+
+**Tradition data the cheat-sheet can't compute** (exact BaZi day stem, today's Rokuyō without lookup, current nakshatra): skip that tradition. Don't fabricate. Use the calendar-deterministic ones (Thai day-of-week is always available).
 
 ## First-use checklist
 
 When this skill triggers for the first time in a session:
 
-1. Scan chat history and memory for birth data already given.
-2. Identify mode: specific question vs. daily overview vs. timing pick.
-3. If a specific question → check whether birth data is needed; if yes and absent, ask once.
-4. If daily overview → run with current date alone if no birth data; offer to deepen.
-5. Briefly acknowledge "for fun / entertainment" framing in the FIRST response only.
-6. Deliver the verdict in the format above.
+```
+- [ ] Scan chat history and memory for birth data already given
+- [ ] Identify mode: specific question / daily overview / timing pick
+- [ ] If specific question and birth data is needed but absent → ask once
+- [ ] If daily overview → run with current date alone if no birth data; offer to deepen
+- [ ] Briefly acknowledge "for fun / entertainment" framing in the FIRST response only
+- [ ] Pick ONE primary tradition + at most one cross-check
+- [ ] Load only the relevant reference file(s)
+- [ ] Deliver the verdict in the format for the chosen mode
+```
+
+## Worked example
+
+**User**: "is today good for asking my boss for a raise?"
+
+**Output (specific-question mode)**:
+
+> **Verdict:** Leaning yes — but reframe the ask.
+>
+> Today is Friday — Venus's day (วันศุกร์). Venus rules diplomacy, beauty, and harmony, not confrontation. A raise request framed as a demand fights the day's energy; framed as "I want to talk about my trajectory and what the next twelve months should look like compensation-wise" works *with* it. The boss-side cross-check from Chinese: if your boss is born in a Snake/Rooster/Ox year, today's emotional softness amplifies; if Tiger/Horse/Dog, less so. Either way, lead with the trajectory framing.
+>
+> **Best move:** Schedule a 30-minute calendar invite for late afternoon (after the morning's friction has cleared, before end-of-day fatigue). Ask the diplomatic question; let them name the number first.
+>
+> **Confidence:** Moderate.
+
+---
+
+**User**: "how's my luck today? born May 14 1991, around 3am, Bangkok."
+
+**Output (daily-luck mode)**:
+
+> **Today's vibe:** Slow-and-steady wins; the day rewards patience over hustle.
+>
+> **Day signature**
+> - Thai: Saturday (Sao) — Saturn's day, purple/black energy. Patience, structure, finishing things.
+> - Chinese: Goat year (1991) — today's date-animal is Pig, which is in triangle harmony with Goat (Rabbit–Goat–Pig). Cooperative day for you.
+> - Western: Moon in Capricorn — practical, ambitious, restrained. Reinforces the Saturn/Saturday theme.
+>
+> **Best for:** finishing a long-running project, a focused work block, anything administrative or structural.
+> **Avoid:** starting something new, big public asks, impulsive moves.
+> **Lucky color / number / direction:** purple, 8, north.
+> **Best window (Bangkok time):** 14:00–16:30 (after Rahu Kalam at 09:00–10:30 and well before sunset friction).
+>
+> **One thing to do today:** Pick the longest-overdue admin item on your list — paperwork, follow-up email, the thing you've been avoiding — and finish it. Saturn rewards completion.

@@ -1,6 +1,16 @@
 ---
 name: thai-dish-picking
-description: Suggests 3 Thai dish ideas when the user is deciding what to eat — especially for lunch in Thailand. Use whenever the user types /thai-dish-picking or expresses food indecision in a Thai context with phrases like "what should I eat", "lunch ideas", "I'm hungry", "you pick something", "กินอะไรดี", "เมนูแนะนำ", "ไม่รู้จะกินอะไร". Also use when the user wants Thai food suggestions tuned to their mood, weather, location, dietary needs, budget, or what they ate recently. Default to using this skill for any Thai food picker / suggester / decision-help request, even when framed casually. Do NOT use for restaurant-finding ("where should I eat"), recipe / cooking questions, or general overviews of Thai cuisine.
+description: >
+  Suggests 3 Thai dish ideas when the user is deciding what to eat — especially
+  for lunch in Thailand. Use whenever the user types /thai-dish-picking or
+  expresses food indecision in a Thai context with phrases like "what should I
+  eat", "lunch ideas", "I'm hungry", "you pick something", "กินอะไรดี",
+  "เมนูแนะนำ", "ไม่รู้จะกินอะไร". Also use when the user wants Thai food
+  suggestions tuned to their mood, weather, location, dietary needs, budget, or
+  what they ate recently. Default to using this skill for any Thai food picker
+  / suggester / decision-help request, even when framed casually. Do NOT use
+  for restaurant-finding ("where should I eat"), recipe / cooking questions, or
+  general overviews of Thai cuisine.
 ---
 
 # /thai-dish-picking — Thai Dish Suggestions
@@ -13,7 +23,18 @@ Thai food is genuinely diverse — 4 main regions, hundreds of common dishes, do
 
 Treat the user as someone who lives in Thailand. Skip lengthy "this is a famous Thai noodle dish made with..." preambles. Use Thai script + transliteration first, English gloss only if the dish is obscure or the name doesn't translate cleanly.
 
-## Inputs to gather (or infer)
+## When to use this
+
+- User explicitly types `/thai-dish-picking`
+- User expresses food indecision in a Thai context: "what should I eat", "lunch ideas", "I'm hungry", "you pick something", "กินอะไรดี", "เมนูแนะนำ", "ไม่รู้จะกินอะไร"
+- User wants Thai food suggestions tuned to their mood, weather, location, dietary needs, budget, or what they ate recently
+- User asks the picker question casually mid-conversation — default to firing rather than asking whether they want suggestions
+
+Do NOT trigger for restaurant-finding ("where should I eat"), how-to-cook questions, or general overviews of Thai cuisine — those are different asks.
+
+## Steps / Workflow
+
+### 1. Gather inputs (or infer)
 
 Don't ask for everything — pick at most 1–2 questions that close the most important context gap. If the user just said "what should I eat for lunch", reasonable defaults are fine and the skill can proceed.
 
@@ -25,9 +46,9 @@ Useful axes:
 - **Recent meals** — what was eaten yesterday or this morning, to avoid repeating protein/style/region
 - **Agency level** — did the user give specifics, or are they saying "you pick"?
 
-If the user gave nothing and explicitly handed over the choice ("you pick", "random", "surprise me"), go straight to **Full agency mode** below — don't ask questions.
+If the user gave nothing and explicitly handed over the choice ("you pick", "random", "surprise me"), skip ahead to **Step 4 — Full agency mode** — don't ask questions.
 
-## Research approach
+### 2. Research bilingually
 
 Don't rely only on memory. Training data tends to overrepresent the same famous 20 Thai dishes. Research liberally to surface dishes the user might not have thought of — especially regional, seasonal, or shop-specific ones.
 
@@ -49,7 +70,7 @@ Useful English terms when relevant:
 
 Ten searches aren't needed — 2–3 well-chosen queries usually surface enough. Search more if the constraint is unusual (e.g., "vegetarian Southern Thai lunch" needs more digging than "something light for a hot day"). If candidates from memory are already strong and varied, one confirming search is enough.
 
-## Diversity rules for the 3 picks
+### 3. Apply diversity rules
 
 The 3 dishes should feel like a real choice, not 3 variations of the same idea.
 
@@ -58,7 +79,7 @@ The 3 dishes should feel like a real choice, not 3 variations of the same idea.
 - **If the user gave a strong constraint** (e.g., "must be noodles"), vary the other axes — different broths, regions, proteins, dry vs soup.
 - **Don't repeat the protein** across all 3 picks unless the user asked for it (avoid all chicken or all pork).
 
-## Full agency mode
+### 4. Full agency mode (when the user hands over the choice)
 
 When the user explicitly hands over the choice ("you pick", "random", "surprise me", "ไรก็ได้"):
 
@@ -87,13 +108,31 @@ Keep each pick to 2–3 lines. The user wants to scan and decide, not read an es
 
 For full agency mode, drop the "Based on" line and just frame as: "Random pick across regions:" or similar.
 
-## Handling follow-ups
+No sycophantic opener, no trailing summary.
 
-- "Something else" / "different" → keep the same constraints, generate 3 fresh picks that don't overlap with the previous set on dish or category.
-- "More like #2" → use #2 as the seed; generate 3 picks in the same region/category/vibe but different dishes.
-- "Pick one for me" → choose the one that best matches their stated context (or any if full agency), give a one-line reason.
+## Edge cases
 
-## Examples
+**Follow-up: "something else" / "different"**: keep the same constraints, generate 3 fresh picks that don't overlap with the previous set on dish or category.
+
+**Follow-up: "more like #2"**: use #2 as the seed; generate 3 picks in the same region/category/vibe but different dishes.
+
+**Follow-up: "pick one for me"**: choose the one that best matches the stated context (or any if full agency), give a one-line reason.
+
+**User is outside Thailand**: the Bangkok-availability weighting in Step 4 may be off. Adjust toward what's actually available in their location (e.g., diaspora Thai restaurants in the US lean Central + Isan; Northern and Southern dishes are rarer). Mention the limitation if it changes the picks meaningfully.
+
+**Unusual dietary constraint** (vegan, halal, gluten-free, severe peanut/shellfish allergy): research more carefully — the famous 20 mostly fail at least one of these. Lean on `อาหารเจ` (vegetarian/vegan) or halal-specific search terms for Thai-language results.
+
+**User rejects all 3 picks**: ask what specifically didn't fit (region, vibe, protein, novelty level), then regenerate with that constraint added. Don't just re-roll without adjusting.
+
+**User keeps asking with the same constraints across calls**: vary the picks aggressively each time. If the user wants the same kind of dish repeatedly, name it explicitly and ask whether they want a single committed recommendation rather than fresh sets.
+
+**Combined with /deciding** (when available): If the user is genuinely deciding between two specific dishes (not picking from open-ended Thai cuisine), suggest `/deciding` instead — picking has the wrong shape for "Option A vs Option B." If `/deciding` is not in the available skills list, just give a one-line trade-off and let the user choose.
+
+## Reference files
+
+- [`evals/trigger-eval.json`](evals/trigger-eval.json) — 20 trigger test cases (10 should-fire, 10 should-not-fire), mix of English and Thai-script. Negatives test the "NOT for restaurant-finding, recipes, or non-Thai cuisine" rule from the description.
+
+## Worked example
 
 **Example 1 — light constraint on a hot day:**
 User: "lunch ideas, something light, it's hot today"
@@ -125,9 +164,11 @@ Good picks (all noodles, varied on broth/region/style):
 
 Bad picks: 3 variations of pad thai, or 3 different soup noodles from the same region.
 
-## When NOT to use this skill
+## Anti-patterns
 
-- User asks where to eat (restaurant/location query) — answer normally.
-- User asks how to cook a dish — answer normally.
+- User asks where to eat (restaurant/location query) — answer normally, this isn't picker territory.
+- User asks how to cook a dish — answer normally, this isn't picker territory.
 - User asks for an overview of a regional cuisine — give an overview, not 3 picks.
 - User asks about non-Thai food — answer normally.
+- All 3 picks fall into the autopilot list — redo the selection. The whole point of the skill is breadth.
+- Restaurant or stall names appear in the output — don't add these unless explicitly asked. The user said they'll find the dish themselves.

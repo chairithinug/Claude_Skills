@@ -1,0 +1,25 @@
+{
+  "_comment": "Trigger eval for fortune-telling skill. 10 should-trigger + 10 should-not-trigger = 20 cases. Negative cases include factual astronomy/calendar questions (different domain), high-stakes decisions where reasoning is wanted not vibes, and astrology theory questions that don't ask for a reading.",
+  "evals": [
+    {"query": "/fortune-telling", "should_trigger": true, "category": "explicit_slash_command"},
+    {"query": "how's my luck today?", "should_trigger": true, "category": "daily_luck_overview_explicit"},
+    {"query": "is today a good day to ask my boss for a raise?", "should_trigger": true, "category": "specific_question_today"},
+    {"query": "should I sign this contract on Friday or wait until Monday?", "should_trigger": true, "category": "auspicious_timing_pick"},
+    {"query": "will I get the job? interview was yesterday and I'm anxious", "should_trigger": true, "category": "oracle_verdict_yes_no"},
+    {"query": "pick me an auspicious date for my wedding next year. somewhere in October ideally", "should_trigger": true, "category": "date_picking_explicit"},
+    {"query": "what's my luck like this week? been feeling off and want to know if it's me or the cosmos", "should_trigger": true, "category": "weekly_luck_with_personal_context"},
+    {"query": "should I take the offer? something feels off about it but I can't put my finger on it", "should_trigger": true, "category": "should_i_take_offer_oracle"},
+    {"query": "give me a quick read on today. born May 14 1991, around 3am, Bangkok if it helps", "should_trigger": true, "category": "daily_with_birth_data"},
+    {"query": "is the universe trying to tell me something? everything's been going sideways this week", "should_trigger": true, "category": "vague_oracle_request"},
+    {"query": "what's the lunar new year date in 2027?", "should_trigger": false, "category": "calendar_factual_question"},
+    {"query": "how does the Chinese zodiac actually work? I keep hearing about year animals but I don't get the system", "should_trigger": false, "category": "astrology_theory_question"},
+    {"query": "I have a really important medical decision to make. give me a serious framework, not vibes.", "should_trigger": false, "category": "high_stakes_wants_reasoning"},
+    {"query": "is astrology real? I'm asking earnestly", "should_trigger": false, "category": "meta_debate_about_astrology"},
+    {"query": "my friend is into astrology, what should I get her for her birthday?", "should_trigger": false, "category": "gift_question_astrology_keyword"},
+    {"query": "what time is sunrise in Bangkok on November 5?", "should_trigger": false, "category": "astronomy_factual"},
+    {"query": "my horoscope app keeps crashing. how do I troubleshoot?", "should_trigger": false, "category": "tech_support_horoscope_keyword"},
+    {"query": "should we hire her or him? need a real assessment, not luck-based", "should_trigger": false, "category": "hiring_decision_wants_real_analysis"},
+    {"query": "explain Vedic astrology vs Western astrology — what's actually different about the systems?", "should_trigger": false, "category": "comparative_explanation_request"},
+    {"query": "I had a weird dream last night, is that a sign of something?", "should_trigger": false, "category": "dream_interpretation_different_domain"}
+  ]
+}

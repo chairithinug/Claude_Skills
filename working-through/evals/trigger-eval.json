@@ -1,0 +1,25 @@
+{
+  "_comment": "Trigger eval for working-through skill. 10 should-trigger + 10 should-not-trigger = 20 cases. Skill coaches the user to derive the answer themselves. Negatives test the boundary against /explaining (give me the answer with reasoning), against just-give-me-the-answer asks, and against time-pressed work where coaching would frustrate.",
+  "evals": [
+    {"query": "/working-through", "should_trigger": true, "category": "explicit_slash_command"},
+    {"query": "help me figure out why my unit tests are flaky. don't just tell me the answer — help me develop the diagnostic skill", "should_trigger": true, "category": "develop_skill_explicit"},
+    {"query": "I want to actually understand how to debug this myself, not have you fix it. walk me through the reasoning, then let me try", "should_trigger": true, "category": "want_to_understand_self"},
+    {"query": "I keep getting these kinds of bugs. give me a framework I can apply, then let me apply it to this one", "should_trigger": true, "category": "framework_then_apply"},
+    {"query": "teach me how to think about this kind of problem. don't solve it for me yet", "should_trigger": true, "category": "teach_me_to_think"},
+    {"query": "I want to learn to evaluate trade-offs in system design. take me through it for this specific case but make me do the work", "should_trigger": true, "category": "learn_via_doing"},
+    {"query": "guide me through debugging this React performance issue. I want to develop the muscle, not just have you fix it", "should_trigger": true, "category": "guide_me_develop_muscle"},
+    {"query": "ok I'm trying to get better at SQL. help me think through how to write this query without giving me the query", "should_trigger": true, "category": "improve_skill_through_problem"},
+    {"query": "give me the framework, ask me to apply it, then react to my attempt. that's how I learn best", "should_trigger": true, "category": "explicit_skill_request"},
+    {"query": "I want to get good at financial-statement reading. work through this earnings report with me — but Socratically", "should_trigger": true, "category": "socratic_learning_explicit"},
+    {"query": "just tell me the answer — why is my code throwing this error?", "should_trigger": false, "category": "just_tell_me_explicit"},
+    {"query": "explain why CAP theorem matters", "should_trigger": false, "category": "explaining_request_not_working_through"},
+    {"query": "I'm in a rush, just fix this for me", "should_trigger": false, "category": "time_pressed_just_fix"},
+    {"query": "what's the answer to this math problem?", "should_trigger": false, "category": "just_the_answer"},
+    {"query": "summarize this article for me", "should_trigger": false, "category": "summarization_task"},
+    {"query": "I don't have time to learn, just write me the SQL query", "should_trigger": false, "category": "explicit_no_learning_time"},
+    {"query": "translate this French paragraph", "should_trigger": false, "category": "translation_task"},
+    {"query": "write the code for me, I'll figure out how it works later", "should_trigger": false, "category": "code_now_learn_later"},
+    {"query": "I already know how to do this, I just need a reminder of the syntax", "should_trigger": false, "category": "syntax_reminder_not_learning"},
+    {"query": "what's the difference between functional and object-oriented programming?", "should_trigger": false, "category": "concept_explanation_request"}
+  ]
+}

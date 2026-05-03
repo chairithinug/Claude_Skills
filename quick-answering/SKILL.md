@@ -48,6 +48,10 @@ answer entirely.
 format. Apply the other mode's logic but deliver the output with /quick-answering
 brevity.
 
+## Reference files
+
+- [`evals/trigger-eval.json`](evals/trigger-eval.json) — 20 trigger test cases (10 should-fire, 10 should-not-fire). Negatives test where brevity would HIDE nuance: medical/legal/financial questions, ambiguous queries, and complex topics where a one-liner would be confidently misleading.
+
 ## Worked example
 
 **User**: "What's the time complexity of Python's `sorted()`?"

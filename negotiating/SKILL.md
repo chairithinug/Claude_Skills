@@ -168,6 +168,18 @@ workflow. Acknowledge first, offer the workflow as an option.
 skills list, mention to the user that decision-framework prep would normally
 precede negotiation prep, and proceed with `/negotiating` standalone.
 
+**Combined with /devil-advocating** (when available): After preparing the
+negotiation, run `/devil-advocating` on the user's own opening or proposed
+counter — it surfaces the strongest objections the counterpart will raise,
+which is more useful than rehearsing what the user wants to say. If
+`/devil-advocating` is not in the available skills list, complete the prep
+and tell the user that red-teaming their position before the conversation
+would normally be the next step.
+
+## Reference files
+
+- [`evals/trigger-eval.json`](evals/trigger-eval.json) — 20 trigger test cases (10 should-fire, 10 should-not-fire). Description is already strong on triggering — the negative cases here test the boundary between real upcoming negotiations (fires) and theory questions / fictional scenarios / past-tense debriefs / book recommendations (doesn't fire).
+
 ## Worked example (compact, mid-negotiation)
 
 **User**: "Got an offer from Acme for $180k base. Asked for $200k. They came back with $185k. What now?"

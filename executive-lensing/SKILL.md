@@ -54,6 +54,26 @@ decisions. After one decline or ignored suggestion, stop reminding on that threa
 **User provides the lenses**: If the user says "just run CEO and CFO," honor
 that — do not add the others.
 
+**Combined with /deciding** (when available): Executive-lensing surfaces blind
+spots from each function; running `/deciding` afterward can structure the
+trade-offs the lenses raised into an actual choice. If `/deciding` is not in
+the available skills list, complete the lens analysis and tell the user that
+a decision-framework pass would be the natural follow-up.
+
+## Reference files
+
+- [`references/lenses.md`](references/lenses.md) — Full definitions and guiding
+  questions for each of the six lenses (CEO, CFO, COO, CMO, CTO, CHRO). Load
+  when depth is needed on a specific lens; skip when the active lenses are
+  obvious from the problem.
+- [`evals/trigger-eval.json`](evals/trigger-eval.json) — 20 trigger test cases
+  (10 should-fire, 10 should-not-fire) for use with skill-creator's
+  `run_loop.py`. The negative cases include near-misses on C-suite keywords:
+  definition requests ("what does CFO stand for"), theory questions about
+  C-suite frameworks, writing tasks that mention executive titles, and career
+  prep that touches the same vocabulary without warranting multi-lens
+  analysis.
+
 ## Worked example
 
 **User**: "We're considering acquiring a competitor."
