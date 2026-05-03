@@ -72,12 +72,26 @@ Keep the interview tight. 5–8 focused exchanges is enough for most projects. F
 
 ## Step 2 — Produce the AI Project Brief
 
-Once enough information is gathered, produce the brief. Write it in Markdown. Tell the user what file it is being saved to.
+Once enough information is gathered, produce the brief in Markdown using the structure defined in [`## Output format`](#output-format) below. Save to `[workspace folder]/[project-name]-AI-Brief.md` and tell the user where it lives.
 
-Save to: [workspace folder]/[project-name]-AI-Brief.md
+---
 
-Use this exact structure:
+## Step 3 — Handoff
 
+After saving the brief, tell the user:
+1. A link to the file
+2. One sentence on which prompt template to start with
+3. One specific risk or assumption to watch for in their project
+
+Keep it short. The brief does the heavy lifting.
+
+---
+
+## Output format
+
+The AI Project Brief follows this exact structure (all headings inside the brief itself; the document produced is a separate Markdown file):
+
+```markdown
 # AI Project Brief — [Project Name]
 *Generated [date] using the AI Fluency 4D Framework*
 
@@ -130,13 +144,9 @@ Use this exact structure:
 [Role/persona if relevant]
 
 Context: [project background, audience, goal]
-
 Task: [specific instruction]
-
 Process: [how to approach it — steps, framework, method]
-
 Output format: [exact format expected — length, structure, sections]
-
 Constraints: [anything to avoid, style rules, word count, etc.]
 
 **Iteration/refinement prompt:**
@@ -195,17 +205,9 @@ Keep [what to preserve]. Focus especially on [priority area].
 | Before each AI interaction | D2 spec — describing product, process, and performance clearly? |
 | After each AI output | D3 checklist — product, process, performance all check out? |
 | Before sharing | D4 — verified, disclosed appropriately, I can vouch for this? |
+```
 
----
-
-## Step 3 — Handoff
-
-After saving the brief, tell the user:
-1. A link to the file
-2. One sentence on which prompt template to start with
-3. One specific risk or assumption to watch for in their project
-
-Keep it short. The brief does the heavy lifting. No sycophantic opener, no trailing summary.
+No sycophantic opener, no trailing summary. The brief does the heavy lifting; the handoff message in Step 3 is short by design.
 
 ---
 

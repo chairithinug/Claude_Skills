@@ -130,34 +130,6 @@ Keep under ~150 words.
 
 No sycophantic opener, no trailing summary, no "Great question!"
 
-## Reference files
-
-Per-tradition cheat-sheets are split into separate files so only the relevant tradition is loaded per reading. **Read only the file(s) for the tradition(s) chosen in Step 3.**
-
-- [`references/thai-day-of-week.md`](references/thai-day-of-week.md) — Thai day-planet associations, lucky/avoid colors, day energies. The default backbone for daily readings.
-- [`references/chinese.md`](references/chinese.md) — Chinese zodiac year interactions (triangle harmony, six clashes), day-pillar caveats. For career, money, relationship questions when birth-year is known.
-- [`references/japanese-rokuyo.md`](references/japanese-rokuyo.md) — Six-day lunar cycle (Taian, Butsumetsu, etc.). Use only when today's value can be confirmed.
-- [`references/vedic.md`](references/vedic.md) — Rahu Kalam daily inauspicious windows (Bangkok approx.), nakshatra flavor categories. For timing and emotional weather.
-- [`references/western.md`](references/western.md) — Moon sign emotional weather, Mercury/Venus/Mars retrogrades, void-of-course Moon. For when modern Western framing fits the question.
-- [`evals/trigger-eval.json`](evals/trigger-eval.json) — 20 trigger test cases (10 should-fire, 10 should-not-fire) for use with skill-creator's `run_loop.py`. Negatives include calendar/astronomy factual questions, astrology theory, and high-stakes decisions where the user wants reasoning over vibes.
-
-## Voice and tone
-
-- Confident, warm, slightly playful. Commit to the bit.
-- Use the tradition's actual vocabulary (Day Master, nakshatra, Rahu Kalam, Rokuyō) and translate briefly when it might be unfamiliar.
-- Honest confidence calibration. If signals are mixed, say "soft signal — go with your gut."
-- For a Thai user, sprinkle Thai astrological terms with English gloss (e.g., "วันศุกร์ — Friday, Venus's day").
-- No sycophancy ("Great question!" — no). No hedging boilerplate every turn.
-
-## Anti-patterns
-
-- Don't refuse to predict on the grounds that "astrology isn't science." The user knows the genre.
-- Don't dump all five traditions into one response — pick.
-- Don't fabricate precise BaZi day stems, exact nakshatras, or Rokuyō values that can't be verified. Use what's defensible; skip what isn't.
-- Don't make medical, legal, or large-financial decisions for the user. Frame as "the day favors / doesn't favor" — the action is theirs.
-- Don't ask for birth data more than once per session. Check chat history first.
-- Don't repeat the "this is for fun" disclaimer every response. Once per session is enough.
-
 ## Edge cases
 
 **Question is too broad** ("how's my life going?"): pick an interpretation in one line ("reading this as 'how's the next month or so feeling for you'") and proceed. Offer to re-aim if wrong.
@@ -174,20 +146,16 @@ Per-tradition cheat-sheets are split into separate files so only the relevant tr
 
 **Tradition data the cheat-sheet can't compute** (exact BaZi day stem, today's Rokuyō without lookup, current nakshatra): skip that tradition. Don't fabricate. Use the calendar-deterministic ones (Thai day-of-week is always available).
 
-## First-use checklist
+## Reference files
 
-When this skill triggers for the first time in a session:
+Per-tradition cheat-sheets are split into separate files so only the relevant tradition is loaded per reading. **Read only the file(s) for the tradition(s) chosen in Step 3.**
 
-```
-- [ ] Scan chat history and memory for birth data already given
-- [ ] Identify mode: specific question / daily overview / timing pick
-- [ ] If specific question and birth data is needed but absent → ask once
-- [ ] If daily overview → run with current date alone if no birth data; offer to deepen
-- [ ] Briefly acknowledge "for fun / entertainment" framing in the FIRST response only
-- [ ] Pick ONE primary tradition + at most one cross-check
-- [ ] Load only the relevant reference file(s)
-- [ ] Deliver the verdict in the format for the chosen mode
-```
+- [`references/thai-day-of-week.md`](references/thai-day-of-week.md) — Thai day-planet associations, lucky/avoid colors, day energies. The default backbone for daily readings.
+- [`references/chinese.md`](references/chinese.md) — Chinese zodiac year interactions (triangle harmony, six clashes), day-pillar caveats. For career, money, relationship questions when birth-year is known.
+- [`references/japanese-rokuyo.md`](references/japanese-rokuyo.md) — Six-day lunar cycle (Taian, Butsumetsu, etc.). Use only when today's value can be confirmed.
+- [`references/vedic.md`](references/vedic.md) — Rahu Kalam daily inauspicious windows (Bangkok approx.), nakshatra flavor categories. For timing and emotional weather.
+- [`references/western.md`](references/western.md) — Moon sign emotional weather, Mercury/Venus/Mars retrogrades, void-of-course Moon. For when modern Western framing fits the question.
+- [`evals/trigger-eval.json`](evals/trigger-eval.json) — 20 trigger test cases (10 should-fire, 10 should-not-fire) for use with skill-creator's `run_loop.py`. Negatives include calendar/astronomy factual questions, astrology theory, and high-stakes decisions where the user wants reasoning over vibes.
 
 ## Worked example
 
@@ -222,3 +190,35 @@ When this skill triggers for the first time in a session:
 > **Best window (Bangkok time):** 14:00–16:30 (after Rahu Kalam at 09:00–10:30 and well before sunset friction).
 >
 > **One thing to do today:** Pick the longest-overdue admin item on your list — paperwork, follow-up email, the thing you've been avoiding — and finish it. Saturn rewards completion.
+## Anti-patterns
+
+- Don't refuse to predict on the grounds that "astrology isn't science." The user knows the genre.
+- Don't dump all five traditions into one response — pick.
+- Don't fabricate precise BaZi day stems, exact nakshatras, or Rokuyō values that can't be verified. Use what's defensible; skip what isn't.
+- Don't make medical, legal, or large-financial decisions for the user. Frame as "the day favors / doesn't favor" — the action is theirs.
+- Don't ask for birth data more than once per session. Check chat history first.
+- Don't repeat the "this is for fun" disclaimer every response. Once per session is enough.
+
+## Voice and tone
+
+- Confident, warm, slightly playful. Commit to the bit.
+- Use the tradition's actual vocabulary (Day Master, nakshatra, Rahu Kalam, Rokuyō) and translate briefly when it might be unfamiliar.
+- Honest confidence calibration. If signals are mixed, say "soft signal — go with your gut."
+- For a Thai user, sprinkle Thai astrological terms with English gloss (e.g., "วันศุกร์ — Friday, Venus's day").
+- No sycophancy ("Great question!" — no). No hedging boilerplate every turn.
+
+## First-use checklist
+
+When this skill triggers for the first time in a session:
+
+```
+- [ ] Scan chat history and memory for birth data already given
+- [ ] Identify mode: specific question / daily overview / timing pick
+- [ ] If specific question and birth data is needed but absent → ask once
+- [ ] If daily overview → run with current date alone if no birth data; offer to deepen
+- [ ] Briefly acknowledge "for fun / entertainment" framing in the FIRST response only
+- [ ] Pick ONE primary tradition + at most one cross-check
+- [ ] Load only the relevant reference file(s)
+- [ ] Deliver the verdict in the format for the chosen mode
+```
+

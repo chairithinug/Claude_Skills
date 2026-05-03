@@ -222,24 +222,6 @@ No sycophantic opener, no trailing summary.
 
 ---
 
-## Anti-patterns to flag and refuse
-
-- **Compressing without an eval set.** Refuse to ship aggressive cuts
-  on safety- or revenue-critical prompts without a verification path.
-  Suggest the user build a 50-example eval first.
-- **Compressing safety-relevant content** in medical, legal, mental-health,
-  financial, or crisis-adjacent prompts. The few tokens saved are not
-  worth the liability.
-- **Removing citations** to save tokens. Provenance is load-bearing in
-  any prompt that touches research, journalism, or compliance.
-- **PII inside cached prompts.** Caches are storage; storage has
-  compliance implications.
-- **Single-pass compression on long agent prompts.** Agent prompts often
-  need *multiple* small compressions (system + tools + history + each
-  turn) — compress the right layer, not the easy layer.
-
----
-
 ## Edge cases
 
 **The prompt is already tight.** Say so. Don't manufacture compressions
@@ -322,3 +304,21 @@ times/day, prompt-caching the system portion is still the bigger win.
 
 **Cache first, batch second, route third, bound fourth, compress fifth,
 rewrite last. The cheapest token is the one not sent.**
+## Anti-patterns to flag and refuse
+
+- **Compressing without an eval set.** Refuse to ship aggressive cuts
+  on safety- or revenue-critical prompts without a verification path.
+  Suggest the user build a 50-example eval first.
+- **Compressing safety-relevant content** in medical, legal, mental-health,
+  financial, or crisis-adjacent prompts. The few tokens saved are not
+  worth the liability.
+- **Removing citations** to save tokens. Provenance is load-bearing in
+  any prompt that touches research, journalism, or compliance.
+- **PII inside cached prompts.** Caches are storage; storage has
+  compliance implications.
+- **Single-pass compression on long agent prompts.** Agent prompts often
+  need *multiple* small compressions (system + tools + history + each
+  turn) — compress the right layer, not the easy layer.
+
+---
+

@@ -29,6 +29,7 @@ Claude_Skills/
 | [`executive-lensing/`](executive-lensing/) | `/executive-lensing` | Stress-tests a problem through CEO, CFO, COO, CMO, CTO, CHRO lenses, surfacing the distinct concern each function would raise. Lens definitions split into `references/lenses.md`. Ships with trigger eval (20 cases). |
 | [`explaining/`](explaining/) | `/explaining` | Gives the answer with full reasoning visible, then closes with a pattern-recognition cue for the next similar problem. Ships with trigger eval (20 cases). |
 | [`fortune-telling/`](fortune-telling/) | `/fortune-telling` | Multi-tradition divination (Thai day-of-week, Chinese BaZi, Vedic, Western, Japanese Rokuyō). Picks one primary tradition + at most one cross-check; gives a verdict, not a lecture. Per-tradition cheat-sheets live in `references/` so only the chosen tradition loads per reading. For entertainment. Ships with trigger eval (20 cases). |
+| [`interviewing/`](interviewing/) | `/interviewing` | Structured interview prep, design, or debrief — both sides of the table. Three modes (interviewee-prep / interviewer-design / interview-debrief) split into `references/` so only the chosen mode loads per session. Cross-cultural and remote-format calibration baked in. Ships with trigger eval (20 cases). |
 | [`negotiating/`](negotiating/) | `/negotiating` | Structured negotiation prep — interests, BATNA, cognitive traps, opening and concession architecture, pre-mortem. Also auto-fires on real upcoming negotiations (salary, vendor, partnership, fundraise). Ships with trigger eval (20 cases). |
 | [`quick-answering/`](quick-answering/) | `/quick-answering` | Fast minimal answer. No frameworks, no scaffolding, no caveats unless load-bearing. Ships with trigger eval (20 cases). |
 | [`researching-topics/`](researching-topics/) | `/researching-topics` | Conducts substantive topic research via a six-step methodology (frame → map → plan sources → execute → synthesize → verify). Three modes (quick-scan, deep-dive, compare-options); layered output with TL;DR, confidence-labeled findings, steel-manned competing views, open questions, and sources. Ships with trigger eval (20 cases). |
@@ -76,6 +77,12 @@ A short read on what each skill is good at, where it falls down, where it could 
 - **Weakness** — technical accuracy on Rokuyō and BaZi day-stems requires ephemeris/calendar lookups Claude lacks; readings rely on traditions that don't need precise computation.
 - **Opportunity** — could integrate calendar/ephemeris APIs for accurate lunar and astronomical data; could chain with `/deciding` when the user is genuinely deciding rather than just asking the oracle.
 - **Threat** — readers may act on predictions for high-stakes decisions despite the disclaimer; medical/legal/financial guardrails must stay firm.
+
+### `interviewing`
+- **Strength** — covers both sides of the table (candidate prep, interviewer design, post-interview debrief) with a shared structural backbone (competency → behavioral evidence → calibrated judgment); three modes split into `references/` for token-efficient progressive disclosure (only the chosen mode loads per session); cross-cultural and remote-format calibration is built-in rather than tacked on; ships with a 20-case trigger eval.
+- **Weakness** — competency-based hiring research is mostly Western/large-company; some recommendations may transfer poorly to small early-stage teams or non-Western hiring norms without local calibration.
+- **Opportunity** — could split out a `references/star-templates.md` with role-family-specific story templates; could pair with `/negotiating` for the post-offer side and `/deciding` for finalist-selection cases.
+- **Threat** — risk of over-prepping the candidate into sounding rehearsed; the skill explicitly flags this but the failure mode is real if the user mistakes "polished script" for "ready."
 
 ### `negotiating`
 - **Strength** — explicit positive and negative trigger cases (this is the strongest description in the repo for accurate firing); ethics check is built into the workflow rather than tacked on; ships with a 20-case trigger eval.

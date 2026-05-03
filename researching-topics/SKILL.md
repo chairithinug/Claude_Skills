@@ -91,7 +91,28 @@ Plan internally; the source plan does not appear as a separate output section. T
 
 ---
 
-## Step 6 — Synthesize (the output)
+## Step 6 — Synthesize
+
+Compose the output in the structure defined in [`## Output format`](#output-format) below. Default structure (quick-scan and deep-dive) for most queries; compare-options structure when the user named alternatives.
+
+---
+
+## Step 7 — Verify (before finalizing)
+
+Self-check pass:
+- Are load-bearing claims actually supported by cited sources?
+- Is fact distinguished from inference? Inference should be labeled ("this suggests", "likely", "inferred").
+- Hedging on settled facts? Don't.
+- Stating contested claims as settled? Don't.
+- Were competing views steel-manned, or strawmanned?
+- Did the chosen mode actually fit the depth of the answer?
+- Are time-sensitive claims marked with their currency?
+
+If a load-bearing claim isn't well-supported, downgrade its confidence or remove it.
+
+---
+
+## Output format
 
 ### Default structure (quick-scan and deep-dive)
 
@@ -152,20 +173,7 @@ For time-sensitive claims, add a brief freshness marker inline (e.g., "as of mid
 - ...
 ```
 
----
-
-## Step 7 — Verify (before finalizing)
-
-Self-check pass:
-- Are load-bearing claims actually supported by cited sources?
-- Is fact distinguished from inference? Inference should be labeled ("this suggests", "likely", "inferred").
-- Hedging on settled facts? Don't.
-- Stating contested claims as settled? Don't.
-- Were competing views steel-manned, or strawmanned?
-- Did the chosen mode actually fit the depth of the answer?
-- Are time-sensitive claims marked with their currency?
-
-If a load-bearing claim isn't well-supported, downgrade its confidence or remove it.
+No sycophantic openers ("Great question!"), no trailing summaries. The closing drill-down offer is allowed and useful when concrete.
 
 ---
 
