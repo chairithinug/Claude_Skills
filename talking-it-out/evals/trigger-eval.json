@@ -1,0 +1,105 @@
+{
+  "_comment": "Trigger eval for talking-it-out skill. 10 should-trigger + 10 should-not-trigger = 20 cases. Used with skill-creator's run_loop.py to optimize the description for triggering accuracy. The negative cases are deliberately near-misses — they share emotional, struggle, or relational keywords with the skill's domain but require different handling. The crisis case is the most important: the skill MUST NOT fire its casual companion flow on self-harm or hopelessness language; the description says to surface concern and direct to resources instead, which means letting Claude's default safety response handle it without the skill's framing.",
+  "evals": [
+    {
+      "query": "/talking-it-out",
+      "should_trigger": true,
+      "category": "explicit_slash_command"
+    },
+    {
+      "query": "ugh today was just the worst. nothing went right at work and I don't even want to think about strategy or fixing anything I just need to vent for a sec",
+      "should_trigger": true,
+      "category": "vent_explicit_anti_advice"
+    },
+    {
+      "query": "I need to get something off my chest. my best friend cancelled on me again, third time in a row. just sitting with how that feels right now",
+      "should_trigger": true,
+      "category": "hurt_no_advice_ask"
+    },
+    {
+      "query": "long day. boss called me out in front of the whole team for missing one deadline when literally everyone misses deadlines. I'm so done.",
+      "should_trigger": true,
+      "category": "work_frustration_casual"
+    },
+    {
+      "query": "had this awful conversation with my mom this morning. she said something that's still bothering me and I can't shake it. don't even want advice yet, just want to talk it through",
+      "should_trigger": true,
+      "category": "family_friction_processing"
+    },
+    {
+      "query": "honestly just feeling overwhelmed today. nothing's catastrophic but everything's just A Lot at once and I don't know what to do with it",
+      "should_trigger": true,
+      "category": "overwhelm_general"
+    },
+    {
+      "query": "just had a stupid fight with my partner about dishes of all things. now I'm sitting here feeling like an idiot for getting that worked up. anyone want to listen for a sec?",
+      "should_trigger": true,
+      "category": "post_conflict_processing"
+    },
+    {
+      "query": "you ever just need to talk something out? trying to make sense of why my coworker's comment in standup landed so hard. it shouldn't have but it did",
+      "should_trigger": true,
+      "category": "process_indirect"
+    },
+    {
+      "query": "I don't need advice or a framework or someone to fix it. just want to say out loud that today was hard and have someone hear it",
+      "should_trigger": true,
+      "category": "explicit_listen_only_request"
+    },
+    {
+      "query": "ok so my brother said something at dinner that I can't stop replaying. don't know if I'm being oversensitive or if it actually was as bad as it felt. just want to talk it out",
+      "should_trigger": true,
+      "category": "family_friction_processing_doubt"
+    },
+    {
+      "query": "my coworker keeps cutting me off in meetings. what should I say to her next time it happens? I want to address it directly.",
+      "should_trigger": false,
+      "category": "direct_advice_request_not_vent"
+    },
+    {
+      "query": "I don't see the point of going on. nothing's getting better and I'm tired of trying. just thought I'd type it out somewhere.",
+      "should_trigger": false,
+      "category": "crisis_must_not_fire_casual_mode"
+    },
+    {
+      "query": "I've been feeling persistently low for the past month, can't sleep, lost interest in stuff I used to enjoy. what therapy options exist for someone like me?",
+      "should_trigger": false,
+      "category": "depression_clinical_signs_resource_request"
+    },
+    {
+      "query": "I'm so frustrated with this Excel pivot table. every time I try to filter on the year column it gives me unrelated values. how do I fix this??",
+      "should_trigger": false,
+      "category": "tech_question_with_emotional_tone"
+    },
+    {
+      "query": "I'm thinking about quitting my job. it's been stressful and I'm burned out. should I make the move now or wait for the bonus that vests in March?",
+      "should_trigger": false,
+      "category": "career_decide_territory"
+    },
+    {
+      "query": "my partner and I keep arguing about household labor. what's a good framework for splitting domestic tasks fairly?",
+      "should_trigger": false,
+      "category": "relationship_framework_request"
+    },
+    {
+      "query": "had a tough week last month but I'm fine now. anyway, can you help me brainstorm names for my new side project?",
+      "should_trigger": false,
+      "category": "past_tense_casual_pivot_to_other_task"
+    },
+    {
+      "query": "what's the psychological difference between empathy, sympathy, and compassion? I'm reading Paul Bloom and want to understand the distinction",
+      "should_trigger": false,
+      "category": "theoretical_question_no_personal_struggle"
+    },
+    {
+      "query": "I drafted this email to my manager about a difficult coworker. can you read it and tell me if my tone is too aggressive?",
+      "should_trigger": false,
+      "category": "writing_critique_request"
+    },
+    {
+      "query": "trying to decide whether to take the offer in Berlin or stay in my current role. there's a lot to weigh — comp, lifestyle, partner's job, visa.",
+      "should_trigger": false,
+      "category": "decide_territory_clearly"
+    }
+  ]
+}
