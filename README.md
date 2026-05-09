@@ -165,17 +165,64 @@ The full process is in [STANDARDS.md](./STANDARDS.md). The short version:
 
 `graphify-out/` holds a knowledge-graph extraction over the repo — useful for spotting structural overlap between skills, surprising cross-references, and orphaned or under-connected concepts.
 
-Latest run (2026-05-09): **285 nodes · 319 edges · 22 communities** across the 16 skills, STANDARDS, CLAUDE.md, and the reference files (~103K words, 83 files). Top communities cluster around Logistics & Supply Chain, AI Solution Advising, Decision & Planning Skills, Skill Authoring Standards, LLM Production Engineering, Token Optimization Evals, Document AI & Multimodal, Agentic Systems, Interviewing, Executive Lensing, ASEAN Trade & Thailand, Vedic Astrology, AI Compliance & Risk, and Knowledge Version Management.
+Latest run (2026-05-09): **285 nodes · 319 edges · 22 communities** across the 16 skills, STANDARDS, CLAUDE.md, and the reference files (~103K words, 83 files).
 
-What's committed:
+![Knowledge graph thumbnail — force-directed layout colored by community](graphify-out/graph-thumbnail.png)
 
-- [`graphify-out/GRAPH_REPORT.md`](graphify-out/GRAPH_REPORT.md) — readable summary: community hubs, god nodes (most-connected concepts), surprising connections (inferred edges across skills), orphan detection. Start here.
+*Each node is a concept extracted from the repo; edges are explicit references (90%) and inferred semantic links (10%). Color = detected community. Larger nodes = higher degree. The full interactive view is in [`graphify-out/graph.html`](graphify-out/graph.html).*
+
+### Communities by size
+
+| Community | Nodes | | % |
+|---|---:|---|---:|
+| Logistics & Supply Chain | 49 | `████████████████████████` | 17.2% |
+| AI Solution Advising Skill | 45 | `██████████████████████░░` | 15.8% |
+| Decision & Planning Skills | 29 | `██████████████░░░░░░░░░░` | 10.2% |
+| Fortune Telling & Divination | 23 | `███████████░░░░░░░░░░░░░` | 8.1% |
+| Skill Authoring Standards | 17 | `████████░░░░░░░░░░░░░░░░` | 6.0% |
+| Token Optimization Evals | 17 | `████████░░░░░░░░░░░░░░░░` | 6.0% |
+| LLM Production Engineering | 15 | `███████░░░░░░░░░░░░░░░░░` | 5.3% |
+| Document AI & Multimodal | 14 | `███████░░░░░░░░░░░░░░░░░` | 4.9% |
+| Agentic Systems | 14 | `███████░░░░░░░░░░░░░░░░░` | 4.9% |
+| Interviewing Skill | 14 | `███████░░░░░░░░░░░░░░░░░` | 4.9% |
+| Executive Lensing Skill | 12 | `██████░░░░░░░░░░░░░░░░░░` | 4.2% |
+| Emotional Support Skill | 12 | `██████░░░░░░░░░░░░░░░░░░` | 4.2% |
+| ASEAN Trade & Thailand | 7 | `███░░░░░░░░░░░░░░░░░░░░░` | 2.5% |
+| Skill Template Scaffold | 3 | `█░░░░░░░░░░░░░░░░░░░░░░░` | 1.1% |
+| Vedic Astrology | 3 | `█░░░░░░░░░░░░░░░░░░░░░░░` | 1.1% |
+| Parameter-Efficient Fine-Tuning | 2 | `█░░░░░░░░░░░░░░░░░░░░░░░` | 0.7% |
+| AI Compliance & Risk | 2 | `█░░░░░░░░░░░░░░░░░░░░░░░` | 0.7% |
+| Knowledge Version Management | 2 | `█░░░░░░░░░░░░░░░░░░░░░░░` | 0.7% |
+| Agent Orchestration Frameworks | 2 | `█░░░░░░░░░░░░░░░░░░░░░░░` | 0.7% |
+| Workspace README | 1 | `░░░░░░░░░░░░░░░░░░░░░░░░` | 0.4% |
+| Skill Install Flow | 1 | `░░░░░░░░░░░░░░░░░░░░░░░░` | 0.4% |
+| Model Merging | 1 | `░░░░░░░░░░░░░░░░░░░░░░░░` | 0.4% |
+
+The two largest communities (Logistics, AI-solution-advising) reflect the most recently added skills — they pulled in the most domain vocabulary. Reasoning skills (Decision & Planning, Executive Lensing, Interviewing) cluster more tightly because their bodies are short. The single-node "communities" at the bottom (Workspace README, Skill Install Flow, Model Merging) are concepts that didn't bind strongly to any neighbor — worth checking whether they're orphaned or genuinely peripheral.
+
+### Top 10 most-connected concepts (god nodes)
+
+1. **ai-solution-advising Skill** — 19 edges
+2. **logistics-advising SKILL.md** — 12 edges
+3. **deciding Skill** — 11 edges
+4. **fortune-telling Skill** — 10 edges
+5. **talking-it-out Skill** — 9 edges
+6. **Quality Eval — Token Optimize Skill** — 9 edges
+7. **interviewing SKILL.md** — 9 edges
+8. **researching-topics Skill** — 8 edges
+9. **Japanese Rokuyō Reference** — 8 edges
+10. **6-Layer Logistics Diagnostic Framework** — 8 edges
+
+### What's committed
+
+- [`graphify-out/GRAPH_REPORT.md`](graphify-out/GRAPH_REPORT.md) — readable summary: community hubs, god nodes, surprising connections (inferred edges across skills), orphan detection. Start here.
 - [`graphify-out/graph.html`](graphify-out/graph.html) — interactive force-directed visualization. Open in a browser; click communities to focus, hover edges to see relations.
-- [`graphify-out/graph.json`](graphify-out/graph.json) — structured graph data (nodes, edges, types, confidence levels).
+- [`graphify-out/graph.json`](graphify-out/graph.json) — structured graph data (nodes, edges, types, confidence levels). Author field stripped for public-repo safety.
+- [`graphify-out/graph-thumbnail.png`](graphify-out/graph-thumbnail.png) — the static visualization shown above.
 - [`graphify-out/cost.json`](graphify-out/cost.json) — token/cost provenance per run.
 - [`graphify-out/.graphify_labels.json`](graphify-out/.graphify_labels.json) — community-name labels.
 
-What's gitignored (path leaks or machine-specific): `manifest.json`, `.chunk*_files.txt`, `.graphify_python`, `.graphify_root`, `.graphify_uncached.txt`, `cache/`. Anyone re-running graphify on a fresh clone gets these locally on first run.
+Gitignored (path leaks or machine-specific): `manifest.json`, `.chunk*_files.txt`, `.graphify_python`, `.graphify_root`, `.graphify_uncached.txt`, `cache/`. Re-running graphify on a fresh clone regenerates them locally on first run.
 
 Re-run after meaningful changes (new skill added, major refactor, references restructured) to keep the visualization in sync.
 
