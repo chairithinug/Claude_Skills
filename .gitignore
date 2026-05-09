@@ -63,16 +63,14 @@ coverage/
 Thumbs.db
 Desktop.ini
 
-graphify-out/manifest.json    # mtime-based, breaks after git clone
-graphify-out/cost.json        # local only
-# graphify-out/cache/         # optional: commit for speed, skip to keep repo small
-
-# graphify-out — knowledge graph build artifacts.
-# Commit the readable outputs (GRAPH_REPORT.md, graph.{html,json}, cost.json).
-# Ignore manifest + chunk lists + cache: they embed absolute /Users/... paths
-# that leak on public GitHub, and are reproducible from a fresh graphify run.
+# graphify-out — knowledge-graph build artifacts.
+# Commit:  GRAPH_REPORT.md, graph.html, graph.json, cost.json,
+#          .graphify_labels.json (community labels, no PII).
+# Ignore:  files that embed absolute /Users/... paths (leak on public GitHub)
+#          or are machine-specific / reproducible from a fresh graphify run.
 graphify-out/manifest.json
 graphify-out/.chunk*_files.txt
 graphify-out/.graphify_python
+graphify-out/.graphify_root
 graphify-out/.graphify_uncached.txt
 graphify-out/cache/

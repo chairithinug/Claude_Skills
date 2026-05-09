@@ -14,9 +14,12 @@ Claude_Skills/
 ├── _template/           # scaffolding for new skills (SKILL.md + evals.md)
 ├── <skill-name>/        # one folder per skill
 │   ├── SKILL.md
+│   ├── evals.md
+│   ├── evals/trigger-eval.json
 │   └── references/      # optional, one level deep only
 ├── <skill-name>.skill   # distributable archive (zip of the folder)
-└── <skill-name>.html    # optional public-safe HTML demo
+├── <skill-name>.html    # optional public-safe HTML demo
+└── graphify-out/        # knowledge graph over the repo (see § Knowledge graph)
 ```
 
 ## Skills in this repo
@@ -24,6 +27,7 @@ Claude_Skills/
 | Skill | Trigger | What it does |
 |---|---|---|
 | [`ai-fluency-planning/`](ai-fluency-planning/) | `/ai-fluency-planning` | Conducts a focused pre-execution interview using the AI Fluency 4D Framework (Delegation, Description, Discernment, Diligence) and produces a markdown AI Project Brief the user can reference throughout the project. Ships with trigger eval (20 cases). |
+| [`ai-solution-advising/`](ai-solution-advising/) | `/ai-solution-advising` | Senior advisory across the full LLM-solution lifecycle: business framing → pattern selection → stack → failure modes → eval & ops → governance. Mode-routes by Solution-Design / Architecture / Engineering Deep-Dive / Eval-Ops / Governance and loads only the relevant references per question (19 reference files split by domain). Knowledge-currency mechanism: `references/knowledge-version.md` and `references/refresh.md` are first-class — read at session start, updated on a refresh pass. Ships with trigger eval (20 cases) and quality evals (3 mode-stress scenarios). |
 | [`deciding/`](deciding/) | `/deciding` | Walks a real decision through options, criteria, trade-offs, key unknown, reversibility, pre-mortem. Recommends only when the criteria clearly favor one option. Ships with trigger eval (20 cases). |
 | [`devil-advocating/`](devil-advocating/) | `/devil-advocating` | Builds the strongest case against the user's position. No balance, no recovery path. Ships with trigger eval (20 cases). |
 | [`executive-lensing/`](executive-lensing/) | `/executive-lensing` | Stress-tests a problem through CEO, CFO, COO, CMO, CTO, CHRO lenses, surfacing the distinct concern each function would raise. Lens definitions split into `references/lenses.md`. Ships with trigger eval (20 cases). |
@@ -48,6 +52,12 @@ A short read on what each skill is good at, where it falls down, where it could 
 - **Weakness** — the full interview can feel heavy on simple projects; relies on the user articulating Discernment criteria, which many people find hard upfront.
 - **Opportunity** — could ship template variants for common project types (memo, code project, research synthesis); could integrate with `/deciding` for project-go/no-go gating.
 - **Threat** — risk of becoming a procrastination tool — endless planning without execution. Output should commit the user to a concrete start.
+
+### `ai-solution-advising`
+- **Strength** — mode-routing (Solution-Design / Architecture / Engineering Deep-Dive / Eval-Ops / Governance) adapts response shape to the question type rather than dumping the same template every time; 19 reference files split by domain mean only the relevant slice loads per response (token-efficient progressive disclosure at the largest scale in the repo); explicit "patterns endure, tools change" framing keeps recommendations defensible past tool churn; first-class knowledge-currency mechanism (`knowledge-version.md` + `refresh.md`) names what's stale rather than fabricating confidence; ships with a 20-case trigger eval (with near-miss negatives against `/researching-topics`, `/deciding`, `/logistics-advising`, `/executive-lensing`) and a 3-scenario quality eval covering different modes.
+- **Weakness** — body is the longest in the repo (≈350 lines) and the reference set is heavy; for quick tactical questions the framework can over-index. Tool-specific advice ages fast even with the refresh mechanism — between refreshes, claims about specific frameworks or vendors may be wrong. Calibration on enterprise economics, org design, and executive comms is acknowledged as a v1.3 gap.
+- **Opportunity** — could chain with `/researching-topics` for the discovery half of "is this technique production-ready" questions, with `/deciding` when the question is fundamentally a build-vs-buy choice rather than an architectural one, and with `/logistics-advising` (or other domain skills) for cross-domain AI-for-X scoping. The knowledge-currency pattern (`knowledge-version.md` + `refresh.md`) could be promoted to STANDARDS as an optional pattern for fast-moving-domain skills.
+- **Threat** — false precision: the depth of the framework + named parameters can read more authoritative than the framework deserves on novel architectures or fast-moving regimes (e.g., shifting AI Act enforcement). Skill must keep "patterns are durable, tools are not — verify before committing" honest, not as closing platitude. Also: the refresh workflow is only as good as it gets *run* — if cadence slips, the skill quietly becomes a liability rather than an asset.
 
 ### `deciding`
 - **Strength** — six-step structure surfaces reversibility and the key unknown explicitly, not just options/criteria; only recommends when criteria clearly favor one option; ships with a 20-case trigger eval.
@@ -150,6 +160,24 @@ The full process is in [STANDARDS.md](./STANDARDS.md). The short version:
 - **No secrets, anywhere.** No API keys, no `process.env`, no `.env` files, no PII — in skill files or HTML demos. This repo is public.
 - **HTML demos must satisfy the public-GitHub safety contract** in [STANDARDS.md §12](./STANDARDS.md#12-html-demo-artifact--public-github-safety-contract). Single-file, runs from `file://`, no API calls to provider endpoints, no key inputs without explicit warnings.
 - **Anthropic's [authoring best practices](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices) supersede everything here** when they conflict.
+
+## Knowledge graph
+
+`graphify-out/` holds a knowledge-graph extraction over the repo — useful for spotting structural overlap between skills, surprising cross-references, and orphaned or under-connected concepts.
+
+Latest run (2026-05-09): **285 nodes · 319 edges · 22 communities** across the 16 skills, STANDARDS, CLAUDE.md, and the reference files (~103K words, 83 files). Top communities cluster around Logistics & Supply Chain, AI Solution Advising, Decision & Planning Skills, Skill Authoring Standards, LLM Production Engineering, Token Optimization Evals, Document AI & Multimodal, Agentic Systems, Interviewing, Executive Lensing, ASEAN Trade & Thailand, Vedic Astrology, AI Compliance & Risk, and Knowledge Version Management.
+
+What's committed:
+
+- [`graphify-out/GRAPH_REPORT.md`](graphify-out/GRAPH_REPORT.md) — readable summary: community hubs, god nodes (most-connected concepts), surprising connections (inferred edges across skills), orphan detection. Start here.
+- [`graphify-out/graph.html`](graphify-out/graph.html) — interactive force-directed visualization. Open in a browser; click communities to focus, hover edges to see relations.
+- [`graphify-out/graph.json`](graphify-out/graph.json) — structured graph data (nodes, edges, types, confidence levels).
+- [`graphify-out/cost.json`](graphify-out/cost.json) — token/cost provenance per run.
+- [`graphify-out/.graphify_labels.json`](graphify-out/.graphify_labels.json) — community-name labels.
+
+What's gitignored (path leaks or machine-specific): `manifest.json`, `.chunk*_files.txt`, `.graphify_python`, `.graphify_root`, `.graphify_uncached.txt`, `cache/`. Anyone re-running graphify on a fresh clone gets these locally on first run.
+
+Re-run after meaningful changes (new skill added, major refactor, references restructured) to keep the visualization in sync.
 
 ## Installing skills from this repo
 
