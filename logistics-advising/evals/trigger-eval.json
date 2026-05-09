@@ -1,0 +1,22 @@
+[
+  {"query": "/logistics-advising", "should_trigger": true, "category": "explicit_slash_command"},
+  {"query": "We're a Thai electronics CM shipping to a US buyer on FOB Laem Chabang. Buyer wants us to switch to DDP. Should we?", "should_trigger": true, "category": "cross_border_incoterm_decision"},
+  {"query": "Our 3PL warehouse pick rate dropped from 65 to 48 lines/hour over 3 months. Volume up 20%. Boss wants to buy AMRs. Worth it?", "should_trigger": true, "category": "warehouse_ops_layer2"},
+  {"query": "Board is asking whether we should nearshore Asian sourcing to Mexico for tariff exposure. Currently 60% China sourced. How do I think about this?", "should_trigger": true, "category": "strategic_resilience_nearshoring"},
+  {"query": "We're paying MFN duty on goods that I think qualify for ATIGA preference but our broker says the paperwork isn't worth it. Thoughts?", "should_trigger": true, "category": "fta_preference_unclaimed"},
+  {"query": "what's the working-capital impact of going from FOB to DDP on a $50M annual import program?", "should_trigger": true, "category": "finance_landed_cost"},
+  {"query": "we're running an RFP for a TMS at our 3PL. how do you weigh Project44 vs FourKites vs MercuryGate?", "should_trigger": true, "category": "vendor_selection_tms"},
+  {"query": "S&OP at my company is just a forecasting meeting that nobody senior shows up to. how do we fix it?", "should_trigger": true, "category": "org_incentive_sandop"},
+  {"query": "we ship oversized project cargo for offshore oil & gas in the Gulf of Thailand. what's a sane KPI bundle?", "should_trigger": true, "category": "vertical_specific_project_logistics"},
+  {"query": "we're a CPG facing repeated Walmart OTIF penalties. Where do we look first?", "should_trigger": true, "category": "retailer_otif_compliance"},
+  {"query": "what does the abbreviation FOB stand for in shipping?", "should_trigger": false, "category": "definition_lookup"},
+  {"query": "what year was the SCOR model first published?", "should_trigger": false, "category": "history_question"},
+  {"query": "for my MBA operations class, write a textbook explanation of the bullwhip effect", "should_trigger": false, "category": "academic_coursework"},
+  {"query": "do a deep-dive research report on the future of port automation globally", "should_trigger": false, "category": "research_deepdive_use_researching_topics"},
+  {"query": "should I take the senior supply chain director role at this CPG company or stay where I am? walk me through the trade-offs", "should_trigger": false, "category": "career_decision_use_deciding"},
+  {"query": "our CEO wants a strategy for entering the SE Asian market — give me CEO/CFO/CMO views", "should_trigger": false, "category": "non_logistics_strategic_use_executive_lensing"},
+  {"query": "what's the current spot price of Brent crude?", "should_trigger": false, "category": "commodity_price_lookup"},
+  {"query": "where can I track my DHL package, the tracking number isn't updating", "should_trigger": false, "category": "consumer_shipment_tracking"},
+  {"query": "explain the math of the EOQ formula derivation step by step", "should_trigger": false, "category": "academic_theory_derivation"},
+  {"query": "translate this Chinese commercial invoice into English", "should_trigger": false, "category": "translation_task"}
+]
