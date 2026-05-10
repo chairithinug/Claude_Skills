@@ -1,0 +1,22 @@
+[
+  {"query": "/system-design-advising", "should_trigger": true, "category": "explicit_slash_command"},
+  {"query": "We're building a B2B SaaS for healthcare claim adjudication. Solo founder, will hire 2 engineers in 6 months. Need to handle PHI. What architecture should we start with?", "should_trigger": true, "category": "greenfield_with_compliance"},
+  {"query": "Our Postgres is hitting 80% CPU at peak. Boss wants to shard. Worth it?", "should_trigger": true, "category": "scale_diagnose"},
+  {"query": "Should we use REST or gRPC for our internal service-to-service API?", "should_trigger": true, "category": "decision_support_api_protocol"},
+  {"query": "Reviewing my design doc — taking 8K writes/sec from a single Kafka topic and fanning out to 30 consumer groups. Anything obvious I'm missing?", "should_trigger": true, "category": "review_existing_design"},
+  {"query": "We have 12 microservices and only 8 engineers. Suspect this is over-engineered. How do I think about consolidating?", "should_trigger": true, "category": "architecture_consolidation"},
+  {"query": "Our cloud bill jumped 4x in 2 months. Mostly EC2 and S3. Where do I look?", "should_trigger": true, "category": "cost_diagnosis"},
+  {"query": "Need to add multi-region failover to a single-region Postgres setup. What are my options?", "should_trigger": true, "category": "resilience_pattern_design"},
+  {"query": "Building a real-time feature store for ML training and serving. Suggestions for the storage + serving layer?", "should_trigger": true, "category": "data_ml_infra"},
+  {"query": "Should we move from monolith to microservices now or later? 15 engineers, 1 main product, deploy 3x/week.", "should_trigger": true, "category": "modular_monolith_vs_microservices"},
+  {"query": "what does CAP theorem stand for?", "should_trigger": false, "category": "definition_lookup"},
+  {"query": "explain how transformer attention works for my class", "should_trigger": false, "category": "academic_unrelated"},
+  {"query": "design a RAG pipeline for our customer-support knowledge base", "should_trigger": false, "category": "ai_use_ai_solution_advising"},
+  {"query": "do a deep-dive research report on the future of edge computing globally", "should_trigger": false, "category": "research_use_researching_topics"},
+  {"query": "should I take the senior staff engineer role at Stripe or stay at my current company?", "should_trigger": false, "category": "career_decision_use_deciding"},
+  {"query": "give me CEO/CFO/COO views on whether to build vs buy our analytics platform", "should_trigger": false, "category": "strategic_use_executive_lensing"},
+  {"query": "my Python script throws KeyError on dict access — how do I fix it?", "should_trigger": false, "category": "code_debugging"},
+  {"query": "what year was Kubernetes 1.0 released?", "should_trigger": false, "category": "history_question"},
+  {"query": "how should I structure my 30-person engineering org — squads vs guilds vs tribes?", "should_trigger": false, "category": "org_design_out_of_scope"},
+  {"query": "review my resume for a senior backend engineer role", "should_trigger": false, "category": "resume_review_unrelated"}
+]

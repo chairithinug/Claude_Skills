@@ -197,6 +197,23 @@ Example router-style `SKILL.md` body:
 
 Do not nest references. A reference linking another reference will be partially read.
 
+### `references/` vs `assets/` — Claude reads vs. user takes
+
+A separate `assets/` folder is allowed (and encouraged) for skills that ship **deliverable templates** the user takes away — ADRs, design docs, AI project briefs, runbook scaffolds, postmortem templates. The distinction is purposeful:
+
+| Folder | Purpose | Loaded by | Example |
+|---|---|---|---|
+| `references/` | Long-form material Claude reads to inform a response | Claude (on demand) | `references/architecture-style-decision-tree.md` |
+| `assets/` | Templates or scaffolds the user fills in and keeps | User (offered as deliverable) | `assets/adr-template.md`, `assets/design-doc-template.md` |
+
+A reference file is *consumed* by Claude during the session and shapes the response. An asset file is *handed back* to the user — Claude may copy it into a deliverable or point the user at it, but it isn't fundamentally about informing Claude's reasoning.
+
+When in doubt, ask: "If the user never saw this file directly, would the skill still work?" — yes ⇒ `references/`, no ⇒ `assets/`.
+
+Both folders sit one level deep from `SKILL.md`. Neither nests.
+
+Skills using this pattern: `system-design-advising` (ADR + design-doc templates).
+
 ---
 
 ## 8. Patterns library
